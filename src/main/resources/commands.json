@@ -1,0 +1,12 @@
+{
+  "prefix": "-",
+  "sendMessage": "sendmessage",
+  "setPrefix": "setprefix",
+  "setStatus": "setstatus",
+  "givePermission": "givepermission",
+  "takePermission": "takepermission",
+  "kick": "kick",
+  "ban": "ban",
+  "unban": "unban",
+  "ping": "ping"
+}

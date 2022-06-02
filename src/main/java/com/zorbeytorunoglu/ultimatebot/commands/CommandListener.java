@@ -16,13 +16,15 @@ public class CommandListener extends ListenerAdapter {
     private final CmdBan cmdBan;
     private final CmdUnban cmdUnban;
     private final CmdPing cmdPing;
+    private final CmdAnnounce cmdAnnounce;
 
     public CommandListener(Bot bot, CmdSetStatus cmdSetStatus,
                            CmdSetPrefix cmdSetPrefix,
                            CmdGivePermission cmdGivePermission,
                            CmdTakePermission cmdTakePermission,
                            CmdKick cmdKick, CmdBan cmdBan,
-                           CmdUnban cmdUnban, CmdPing cmdPing) {
+                           CmdUnban cmdUnban, CmdPing cmdPing,
+                           CmdAnnounce cmdAnnounce) {
         this.bot=bot;
         this.cmdSetStatus=cmdSetStatus;
         this.cmdSetPrefix=cmdSetPrefix;
@@ -32,6 +34,7 @@ public class CommandListener extends ListenerAdapter {
         this.cmdBan=cmdBan;
         this.cmdUnban=cmdUnban;
         this.cmdPing=cmdPing;
+        this.cmdAnnounce=cmdAnnounce;
     }
 
     @Override
@@ -43,43 +46,39 @@ public class CommandListener extends ListenerAdapter {
         String[] args=event.getMessage().getContentRaw().split(" ");
 
         if (args[0].equals(cmdSetStatus.getCommand())) {
-            cmdSetStatus.execute(bot,event);
-            return;
+            cmdSetStatus.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdSetPrefix.getCommand())) {
-            cmdSetPrefix.execute(bot,event);
-            return;
+            cmdSetPrefix.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdGivePermission.getCommand())) {
-            cmdGivePermission.execute(bot,event);
-            return;
+            cmdGivePermission.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdTakePermission.getCommand())) {
-            cmdTakePermission.execute(bot,event);
-            return;
+            cmdTakePermission.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdKick.getCommand())) {
-            cmdKick.execute(bot,event);
-            return;
+            cmdKick.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdBan.getCommand())) {
-            cmdBan.execute(bot,event);
-            return;
+            cmdBan.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdUnban.getCommand())) {
-            cmdUnban.execute(bot,event);
-            return;
+            cmdUnban.execute(bot,event); return;
         }
 
         if (args[0].equals(cmdPing.getCommand())) {
-            cmdPing.execute(bot,event);
-            return;
+            cmdPing.execute(bot,event); return;
+        }
+
+        if (args[0].equals(cmdAnnounce.getCommand())) {
+            cmdAnnounce.execute(bot,event); return;
         }
 
     }

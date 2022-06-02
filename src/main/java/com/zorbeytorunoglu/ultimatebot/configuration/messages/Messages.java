@@ -83,8 +83,53 @@ public class Messages {
     private String pong;
     private String pongTitle;
     private String pongColor;
+    private String announceUsage;
+    private String announceUsageTitle;
+    private String announceUsageColor;
+    private String channelNotFound;
+    private String channelNotFoundTitle;
+    private String channelNotFoundColor;
+    private String notTextChannel;
+    private String notTextChannelTitle;
+    private String notTextChannelColor;
 
     public Messages() {}
+
+    public String getNotTextChannel() {
+        return notTextChannel;
+    }
+
+    public String getNotTextChannelTitle() {
+        return notTextChannelTitle;
+    }
+
+    public String getNotTextChannelColor() {
+        return notTextChannelColor;
+    }
+
+    public String getChannelNotFoundTitle() {
+        return channelNotFoundTitle;
+    }
+
+    public String getChannelNotFound() {
+        return channelNotFound;
+    }
+
+    public String getChannelNotFoundColor() {
+        return channelNotFoundColor;
+    }
+
+    public String getAnnounceUsage() {
+        return announceUsage;
+    }
+
+    public String getAnnounceUsageTitle() {
+        return announceUsageTitle;
+    }
+
+    public String getAnnounceUsageColor() {
+        return announceUsageColor;
+    }
 
     public String getPong() {
         return pong;

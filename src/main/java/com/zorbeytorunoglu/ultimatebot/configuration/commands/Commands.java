@@ -12,8 +12,13 @@ public class Commands {
     private String ban;
     private String unban;
     private String ping;
+    private String announce;
 
     public Commands() {}
+
+    public String getAnnounce() {
+        return announce;
+    }
 
     public String getUnban() {
         return unban;

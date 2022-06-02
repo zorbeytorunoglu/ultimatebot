@@ -44,7 +44,8 @@ public class MCPL {
                 new CmdKick(bot),
                 new CmdBan(bot),
                 new CmdUnban(bot),
-                new CmdPing(bot)));
+                new CmdPing(bot),
+                new CmdAnnounce(bot)));
 
         JDA jda=builder.build();
 

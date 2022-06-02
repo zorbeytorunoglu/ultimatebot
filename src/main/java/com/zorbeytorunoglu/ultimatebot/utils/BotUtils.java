@@ -145,4 +145,18 @@ public class BotUtils {
         bot.getPermissionHandler().saveFile();
     }
 
+    public static GuildChannel getGuildChannel(Mentions mentions) {
+        if (mentions.getChannels().isEmpty()) return null;
+        return mentions.getChannels().get(0);
+    }
+
+    public static GuildChannel getGuildChannel(Guild guild, String id) {
+        if (!StringUtils.isNumeric(id)) return null;
+        return guild.getGuildChannelById(id)==null ? null : guild.getGuildChannelById(id);
+    }
+
+    public static GuildChannel getGuildChannel(Guild guild, Mentions mentions, String id) {
+        return getGuildChannel(mentions)==null ? getGuildChannel(guild,id) : getGuildChannel(mentions);
+    }
+
 }

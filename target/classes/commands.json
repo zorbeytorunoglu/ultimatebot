@@ -8,5 +8,6 @@
   "kick": "kick",
   "ban": "ban",
   "unban": "unban",
-  "ping": "ping"
+  "ping": "ping",
+  "announce": "announce"
 }

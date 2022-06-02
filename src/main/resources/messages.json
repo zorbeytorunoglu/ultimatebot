@@ -76,5 +76,14 @@
   "unbannedColor": "GREEN",
   "pong": "Ping `%ping%` | Websocket `%gatewayPing%`",
   "pongTitle": "Here is the results :green_book:",
-  "pongColor": "GREEN"
+  "pongColor": "GREEN",
+  "announceUsage": "%command% <channel> <title(make `none` to disable)%%description%%color(like: `RED`,`GREEN`)>",
+  "announceUsageTitle": "Incorrect Usage :warning:",
+  "announceUsageColor": "RED",
+  "channelNotFound": "Channel could not be found",
+  "channelNotFoundTitle": "I don't know where it is :shrug:",
+  "channelNotFoundColor": "RED",
+  "notTextChannel": "Specified channel is not a text channel sir.",
+  "notTextChannelTitle": "Wrong Type :anger:",
+  "notTextChannelColor": "RED"
 }

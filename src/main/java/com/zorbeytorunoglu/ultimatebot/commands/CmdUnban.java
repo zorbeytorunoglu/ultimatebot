@@ -59,6 +59,7 @@ public class CmdUnban implements MCPLCommand {
 
         event.getGuild().unban(UserSnowflake.fromId(args[1]));
 
+
         event.getMessage().replyEmbeds(BotUtils.getEmbed(
                 messages.getUnbannedTitle(),messages.getUnbanned().replace("%member%",ban.getUser().getName()),messages.getUnbannedColor()
         )).queue();

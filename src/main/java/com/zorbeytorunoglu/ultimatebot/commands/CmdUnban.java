@@ -3,6 +3,7 @@ package com.zorbeytorunoglu.ultimatebot.commands;
 import com.zorbeytorunoglu.ultimatebot.Bot;
 import com.zorbeytorunoglu.ultimatebot.configuration.messages.Messages;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;
+import com.zorbeytorunoglu.ultimatebot.utils.StringUtils;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.UserSnowflake;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -45,6 +46,13 @@ public class CmdUnban implements MCPLCommand {
         if (ban==null) {
             event.getMessage().replyEmbeds(BotUtils.getEmbed(
                     messages.getNotBannedTitle(),messages.getNotBanned(),messages.getNotBannedColor()
+            )).queue();
+            return;
+        }
+
+        if (!StringUtils.isNumeric(args[1])) {
+            event.getMessage().replyEmbeds(BotUtils.getEmbed(
+                    messages.getInvalidNumberTitle(),messages.getInvalidNumber(),messages.getInvalidNumberColor()
             )).queue();
             return;
         }

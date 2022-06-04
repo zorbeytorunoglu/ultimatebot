@@ -85,5 +85,20 @@
   "channelNotFoundColor": "RED",
   "notTextChannel": "Specified channel is not a text channel sir.",
   "notTextChannelTitle": "Wrong Type :anger:",
-  "notTextChannelColor": "RED"
+  "notTextChannelColor": "RED",
+  "channelLocked": "Channel __%channel%__ is locked!",
+  "channelLockedTitle": "Locked :lock:",
+  "channelLockedColor": "GREEN",
+  "noLockedChannel": "We couldn't find any locked channels",
+  "noLockedChannelTitle": "Everything seems quite unlocked :key:",
+  "noLockedChannelColor": "RED",
+  "channelUnlocked": "Channel __%channel%__ is unlocked!",
+  "channelUnlockedTitle": "It is unlocked :key:",
+  "channelUnlockedColor": "GREEN",
+  "lockUsage": "%command% <channel>",
+  "lockUsageTitle": "Lock a channel :exclamation:",
+  "lockUsageColor": "RED",
+  "unlockUsage": "%command% <locked-channel>",
+  "unlockUsageTitle": "Incorrect Usage :anger:",
+  "unlockUsageColor": "RED"
 }

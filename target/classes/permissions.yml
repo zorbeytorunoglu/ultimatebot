@@ -31,3 +31,9 @@ commands:
   announce:
     users: []
     roles: []
+  lock:
+    users: []
+    roles: []
+  unlock:
+    users: []
+    roles: []

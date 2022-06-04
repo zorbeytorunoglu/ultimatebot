@@ -3,8 +3,10 @@ package com.zorbeytorunoglu.ultimatebot;
 import com.zorbeytorunoglu.ultimatebot.commands.*;
 import com.zorbeytorunoglu.ultimatebot.configuration.Resource;
 import com.zorbeytorunoglu.ultimatebot.configuration.commands.CommandsHandler;
+import com.zorbeytorunoglu.ultimatebot.configuration.datas.DataHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.messages.MessageHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.settings.SettingsHandler;
+import com.zorbeytorunoglu.ultimatebot.gui.GUI;
 import com.zorbeytorunoglu.ultimatebot.permissions.PermissionHandler;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;
 import net.dv8tion.jda.api.JDA;
@@ -21,13 +23,18 @@ public class MCPL {
         Resource commandsResource=new Resource("commands.json");
         Resource permissionsResource=new Resource("permissions.yml");
         Resource messagesResource=new Resource("messages.json");
+        Resource dataResource=new Resource("data.yml");
 
         SettingsHandler settingsHandler=new SettingsHandler(settingsResource);
         PermissionHandler permissionHandler=new PermissionHandler(permissionsResource);
         MessageHandler messageHandler=new MessageHandler(messagesResource);
         CommandsHandler commandsHandler=new CommandsHandler(commandsResource);
+        DataHandler dataHandler=new DataHandler(dataResource);
 
-        Bot bot=new Bot(settingsHandler,permissionHandler, messageHandler, commandsHandler);
+        Bot bot=new Bot(settingsHandler,permissionHandler, messageHandler, commandsHandler,dataHandler);
+
+        GUI gui = new GUI(bot);
+        gui.init();
 
         JDABuilder builder = JDABuilder.createDefault(settingsHandler.getSettings().getToken(), GatewayIntent.DIRECT_MESSAGE_REACTIONS,
                 GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_BANS, GatewayIntent.GUILD_EMOJIS, GatewayIntent.GUILD_INVITES,

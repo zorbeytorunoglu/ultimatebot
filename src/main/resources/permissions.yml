@@ -31,3 +31,6 @@ commands:
   announce:
     users: []
     roles: []
+  mute:
+    users: []
+    roles: []

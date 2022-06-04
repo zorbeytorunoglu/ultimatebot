@@ -92,8 +92,23 @@ public class Messages {
     private String notTextChannel;
     private String notTextChannelTitle;
     private String notTextChannelColor;
+    private String muteUsage;
+    private String muteUsageTitle;
+    private String muteUsageColor;
 
     public Messages() {}
+
+    public String getMuteUsage() {
+        return muteUsage;
+    }
+
+    public String getMuteUsageTitle() {
+        return muteUsageTitle;
+    }
+
+    public String getMuteUsageColor() {
+        return muteUsageColor;
+    }
 
     public String getNotTextChannel() {
         return notTextChannel;

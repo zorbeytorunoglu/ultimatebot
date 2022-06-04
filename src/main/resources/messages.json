@@ -85,5 +85,8 @@
   "channelNotFoundColor": "RED",
   "notTextChannel": "Specified channel is not a text channel sir.",
   "notTextChannelTitle": "Wrong Type :anger:",
-  "notTextChannelColor": "RED"
+  "notTextChannelColor": "RED",
+  "muteUsage": "%command% <member> [minutes] [reason]",
+  "muteUsageTitle": "Incorrect Usage :warning:",
+  "muteUsageColor": "RED"
 }

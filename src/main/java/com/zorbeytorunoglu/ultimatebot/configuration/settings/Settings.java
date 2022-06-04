@@ -2,26 +2,22 @@ package com.zorbeytorunoglu.ultimatebot.configuration.settings;
 
 public class Settings {
 
-    private final String token;
-    private final String activity;
-    private final String activityLabel;
+    private final SettingsContainer settingsContainer;
 
-    public Settings(String token, String activity, String activityLabel) {
-        this.token=token;
-        this.activity=activity;
-        this.activityLabel=activityLabel;
-    }
-
-    public String getActivity() {
-        return activity;
-    }
-
-    public String getActivityLabel() {
-        return activityLabel;
+    public Settings(SettingsContainer settingsContainer) {
+        this.settingsContainer=settingsContainer;
     }
 
     public String getToken() {
-        return token;
+        return settingsContainer.token;
+    }
+
+    public String getActivity() {
+        return settingsContainer.activity;
+    }
+
+    public String getActivityLabel() {
+        return settingsContainer.activityLabel;
     }
 
 }

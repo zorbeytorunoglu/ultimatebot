@@ -2,9 +2,12 @@ package com.zorbeytorunoglu.ultimatebot.utils;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
 
 import java.awt.*;
+import java.util.Collections;
+import java.util.EnumSet;
 import java.util.List;
 
 public class BotUtils {
@@ -157,6 +160,28 @@ public class BotUtils {
 
     public static GuildChannel getGuildChannel(Guild guild, Mentions mentions, String id) {
         return getGuildChannel(mentions)==null ? getGuildChannel(guild,id) : getGuildChannel(mentions);
+    }
+
+    public static void revokePermission(TextChannel textChannel, Role role, Permission permission) {
+
+        if (textChannel.getPermissionOverride(role)==null) {
+            textChannel.getManager().putPermissionOverride(role,null, Collections.singleton(permission)).queue();
+        } else {
+            EnumSet<Permission> enumSet=textChannel.getPermissionOverride(role).getDenied();
+            enumSet.add(permission);
+            textChannel.getPermissionOverride(role).getManager().setDenied(enumSet).queue();
+        }
+
+    }
+
+    public static void givePermission(TextChannel textChannel, Role role, Permission permission) {
+        if (textChannel.getPermissionOverride(role)==null) {
+            textChannel.getManager().putPermissionOverride(role,Collections.singleton(permission), null).queue();
+        } else {
+            EnumSet<Permission> enumSet=textChannel.getPermissionOverride(role).getAllowed();
+            enumSet.add(permission);
+            textChannel.getPermissionOverride(role).getManager().setAllowed(enumSet).queue();
+        }
     }
 
 }

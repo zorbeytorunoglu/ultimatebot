@@ -13,8 +13,13 @@ public class Commands {
     private String unban;
     private String ping;
     private String announce;
+    private String mute;
 
     public Commands() {}
+
+    public String getMute() {
+        return mute;
+    }
 
     public String getAnnounce() {
         return announce;

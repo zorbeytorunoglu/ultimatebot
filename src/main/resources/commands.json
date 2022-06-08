@@ -9,5 +9,6 @@
   "ban": "ban",
   "unban": "unban",
   "ping": "ping",
-  "announce": "announce"
+  "announce": "announce",
+  "mute": "mute"
 }

@@ -19,7 +19,7 @@ public class MCPL {
 
     public static void main(String[] args) throws LoginException {
 
-        Resource settingsResource=new Resource("settings.json");
+        Resource settingsResource=new Resource("settings.yml");
         Resource commandsResource=new Resource("commands.json");
         Resource permissionsResource=new Resource("permissions.yml");
         Resource messagesResource=new Resource("messages.json");
@@ -52,7 +52,8 @@ public class MCPL {
                 new CmdBan(bot),
                 new CmdUnban(bot),
                 new CmdPing(bot),
-                new CmdAnnounce(bot)));
+                new CmdAnnounce(bot),
+                new CmdMute(bot)));
 
         JDA jda=builder.build();
 

@@ -88,5 +88,14 @@
   "notTextChannelColor": "RED",
   "muteUsage": "%command% <member> [minutes] [reason]",
   "muteUsageTitle": "Incorrect Usage :warning:",
-  "muteUsageColor": "RED"
+  "muteUsageColor": "RED",
+  "alreadyMuted": "__%member%__ is already muted for",
+  "alreadyMutedTitle": "Are you trying to kill him? :exclamation:",
+  "alreadyMutedColor": "RED",
+  "muteRoleIsPositionedHigher": "Mute role is positioned higher!",
+  "muteRoleIsPositionedHigherTitle": "Not possible :anger:",
+  "muteRoleIsPositionedHigherColor": "RED",
+  "justMuted": "__%member%__ is muted until further notice!",
+  "justMutedTitle": "Don't talk anymore :warning:",
+  "justMutedColor": "RED"
 }

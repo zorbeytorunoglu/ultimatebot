@@ -95,8 +95,47 @@ public class Messages {
     private String muteUsage;
     private String muteUsageTitle;
     private String muteUsageColor;
+    private String alreadyMuted;
+    private String alreadyMutedTitle;
+    private String alreadyMutedColor;
+    private String muteRoleIsPositionedHigher;
+    private String muteRoleIsPositionedHigherTitle;
+    private String muteRoleIsPositionedHigherColor;
+    private String justMuted;
+    private String justMutedTitle;
+    private String justMutedColor;
 
     public Messages() {}
+
+    public String getJustMuted() {
+        return justMuted;
+    }
+
+    public String getJustMutedTitle() {
+        return justMutedTitle;
+    }
+
+    public String getJustMutedColor() {
+        return justMutedColor;
+    }
+
+    public String getAlreadyMuted() {
+        return alreadyMuted;
+    }
+    public String getMuteRoleIsPositionedHigher() { return muteRoleIsPositionedHigher; }
+    public String getMuteRoleIsPositionedHigherTitle() {
+        return muteRoleIsPositionedHigherTitle;
+    }
+    public String getMuteRoleIsPositionedHigherColor() {
+        return muteRoleIsPositionedHigherColor;
+    }
+    public String getAlreadyMutedTitle() {
+        return alreadyMutedTitle;
+    }
+
+    public String getAlreadyMutedColor() {
+        return alreadyMutedColor;
+    }
 
     public String getMuteUsage() {
         return muteUsage;

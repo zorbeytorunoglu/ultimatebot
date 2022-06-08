@@ -1,3 +1,6 @@
-token: token here
+token: 'OTU0NTI5Mzc3NzkyNzIwOTM2.G-wGKQ.WxjqdU7JAeW9jztBAyiTz1RiEE3KQc6NXrIx8s'
 activity: listening
 activity-label: to your dreams
+mute:
+  role-name: Muted
+  max-mute-min: 2880

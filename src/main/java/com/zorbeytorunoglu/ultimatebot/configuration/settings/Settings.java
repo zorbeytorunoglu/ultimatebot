@@ -20,4 +20,8 @@ public class Settings {
         return settingsContainer.activityLabel;
     }
 
+    public String getMuteRoleName() { return settingsContainer.mutedRoleName; }
+
+    public Integer getMaxMuteMinute() { return settingsContainer.maxMuteMinute; }
+
 }

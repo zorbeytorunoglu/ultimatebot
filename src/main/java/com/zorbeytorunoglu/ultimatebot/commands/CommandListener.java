@@ -17,6 +17,7 @@ public class CommandListener extends ListenerAdapter {
     private final CmdUnban cmdUnban;
     private final CmdPing cmdPing;
     private final CmdAnnounce cmdAnnounce;
+    private final CmdMute cmdMute;
 
     public CommandListener(Bot bot, CmdSetStatus cmdSetStatus,
                            CmdSetPrefix cmdSetPrefix,
@@ -24,7 +25,7 @@ public class CommandListener extends ListenerAdapter {
                            CmdTakePermission cmdTakePermission,
                            CmdKick cmdKick, CmdBan cmdBan,
                            CmdUnban cmdUnban, CmdPing cmdPing,
-                           CmdAnnounce cmdAnnounce) {
+                           CmdAnnounce cmdAnnounce, CmdMute cmdMute) {
         this.bot=bot;
         this.cmdSetStatus=cmdSetStatus;
         this.cmdSetPrefix=cmdSetPrefix;
@@ -35,11 +36,11 @@ public class CommandListener extends ListenerAdapter {
         this.cmdUnban=cmdUnban;
         this.cmdPing=cmdPing;
         this.cmdAnnounce=cmdAnnounce;
+        this.cmdMute=cmdMute;
     }
 
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
-
         if (!event.isFromGuild()) return;
         if (event.getAuthor().isBot()) return;
 
@@ -79,6 +80,10 @@ public class CommandListener extends ListenerAdapter {
 
         if (args[0].equals(cmdAnnounce.getCommand())) {
             cmdAnnounce.execute(bot,event); return;
+        }
+
+        if (args[0].equals(cmdMute.getCommand())) {
+            cmdMute.execute(bot,event); return;
         }
 
     }

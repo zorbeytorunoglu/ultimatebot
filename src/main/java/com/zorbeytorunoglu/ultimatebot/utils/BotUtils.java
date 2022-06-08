@@ -1,6 +1,7 @@
 package com.zorbeytorunoglu.ultimatebot.utils;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
+import com.zorbeytorunoglu.ultimatebot.configuration.datas.Mute;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
@@ -182,6 +183,38 @@ public class BotUtils {
             enumSet.add(permission);
             textChannel.getPermissionOverride(role).getManager().setAllowed(enumSet).queue();
         }
+    }
+
+    public static Mute getMute(Member member) {
+
+        if (Mute.getMutes().isEmpty()) return null;
+
+        return Mute.getMutes().stream().filter(mute -> mute.getMemberId()==member.getIdLong()).findFirst().orElse(null);
+
+    }
+
+    public static Role getMutedRole(Bot bot, Guild guild) {
+
+        if (!guild.getRoles().stream().anyMatch(role -> role.getName().equals(bot.getSettingsHandler().getSettings().getMuteRoleName()))) {
+            Role muteRole=guild.createRole()
+                    .setName(bot.getSettingsHandler().getSettings().getMuteRoleName())
+                    .setColor(Color.GRAY)
+                    .setPermissions(Permission.USE_APPLICATION_COMMANDS)
+                    .setMentionable(false)
+                    .complete();
+
+            for (GuildChannel guildChannel:guild.getChannels()) {
+                guildChannel.getPermissionContainer().getManager().putPermissionOverride(muteRole, null, Collections.singleton(Permission.MESSAGE_SEND)).queue();
+            }
+
+            return muteRole;
+
+        } else {
+            return guild.getRoles().stream().filter(role -> role.getName().equalsIgnoreCase(
+                    bot.getSettingsHandler().getSettings().getMuteRoleName()
+            )).findFirst().get();
+        }
+
     }
 
 }

@@ -1,34 +1,32 @@
 package com.zorbeytorunoglu.ultimatebot.configuration.datas;
 
-import net.dv8tion.jda.api.entities.Member;
-
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 public class Mute {
-
-    private final long memberId;
+    private final Long memberId;
     private Date muteExpiration;
-    static final HashMap<Long, Date> mutes=new HashMap<>();
-
+    private String reason;
+    static final ArrayList<Mute> mutes=new ArrayList<>();
     public Mute(long memberId) {
         this.memberId=memberId;
     }
-
     public long getMemberId() {
         return memberId;
     }
-
     public Date getMuteExpiration() {
         return muteExpiration;
     }
-
     public void setMuteExpiration(Date muteExpiration) {
         this.muteExpiration = muteExpiration;
     }
-
-    public static HashMap<Long, Date> getMutes() {
+    public String getReason() {
+        return reason;
+    }
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+    public static ArrayList<Mute> getMutes() {
         return mutes;
     }
-
 }

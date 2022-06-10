@@ -34,3 +34,6 @@ commands:
   mute:
     users: []
     roles: []
+  unmute:
+    users: []
+    roles: []

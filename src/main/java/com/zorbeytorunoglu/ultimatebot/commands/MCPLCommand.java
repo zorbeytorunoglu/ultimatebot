@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public interface MCPLCommand {
 
-    void execute(Bot bot, MessageReceivedEvent event);
+    void execute(Bot bot, MessageReceivedEvent event, String[] args);
 
     String getCommand();
 

@@ -17,7 +17,7 @@ public class CmdKick implements MCPLCommand {
     }
 
     @Override
-    public void execute(Bot bot, MessageReceivedEvent event) {
+    public void execute(Bot bot, MessageReceivedEvent event, String[] args) {
 
         if (!event.isFromGuild()) return;
         if (event.getAuthor().isBot()) return;
@@ -28,8 +28,6 @@ public class CmdKick implements MCPLCommand {
             ).queue();
             return;
         }
-
-        String[] args=event.getMessage().getContentRaw().split(" ");
 
         if (args.length<2) {
             event.getMessage().replyEmbeds(BotUtils.getEmbed(

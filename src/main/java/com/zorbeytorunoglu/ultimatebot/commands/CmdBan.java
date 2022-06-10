@@ -17,7 +17,7 @@ public class CmdBan implements MCPLCommand {
     }
 
     @Override
-    public void execute(Bot bot, MessageReceivedEvent event) {
+    public void execute(Bot bot, MessageReceivedEvent event, String[] args) {
 
         if (!event.isFromGuild()) return;
 
@@ -29,8 +29,6 @@ public class CmdBan implements MCPLCommand {
             ).queue();
             return;
         }
-
-        String[] args=event.getMessage().getContentRaw().split(" ");
 
         if (args.length==1) {
             event.getMessage().replyEmbeds(BotUtils.getEmbed(

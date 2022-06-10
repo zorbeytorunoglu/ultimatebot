@@ -16,13 +16,11 @@ public class CmdSetPrefix implements MCPLCommand {
     }
 
     @Override
-    public void execute(Bot bot, MessageReceivedEvent event) {
+    public void execute(Bot bot, MessageReceivedEvent event, String[] args) {
 
         if (!event.isFromGuild()) return;
 
         if (event.getAuthor().isBot()) return;
-
-        String[] args=event.getMessage().getContentRaw().split(" ");
 
         if (!bot.getPermissionHandler().hasPermission("setprefix",event.getMember())) {
             event.getTextChannel().sendMessageEmbeds(

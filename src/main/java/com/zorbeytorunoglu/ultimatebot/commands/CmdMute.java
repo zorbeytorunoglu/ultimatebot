@@ -138,6 +138,14 @@ public class CmdMute implements MCPLCommand {
                 return;
             }
 
+            if (minutes>bot.getSettingsHandler().getSettings().getMaxMuteMinute()) {
+                event.getMessage().replyEmbeds(BotUtils.getEmbed(
+                        messages.getBiggerThanMaxMuteTitle(),messages.getBiggerThanMaxMute().replace("%maxminute%", bot.getSettingsHandler().getSettings().getMaxMuteMinute()+""),
+                        messages.getBiggerThanMaxMuteColor()
+                )).queue();
+                return;
+            }
+
             Mute mute=new Mute(member.getIdLong());
 
             Date expiresIn = new Date(Calendar.getInstance().getTimeInMillis() + (10 * 60 * 1000));

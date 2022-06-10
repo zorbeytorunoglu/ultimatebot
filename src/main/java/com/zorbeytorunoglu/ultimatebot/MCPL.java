@@ -8,6 +8,7 @@ import com.zorbeytorunoglu.ultimatebot.configuration.messages.MessageHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.settings.SettingsHandler;
 import com.zorbeytorunoglu.ultimatebot.gui.GUI;
 import com.zorbeytorunoglu.ultimatebot.permissions.PermissionHandler;
+import com.zorbeytorunoglu.ultimatebot.services.Executor;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -36,6 +37,8 @@ public class MCPL {
         GUI gui = new GUI(bot);
         gui.init();
 
+        Executor.init();
+
         JDABuilder builder = JDABuilder.createDefault(settingsHandler.getSettings().getToken(), GatewayIntent.DIRECT_MESSAGE_REACTIONS,
                 GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_BANS, GatewayIntent.GUILD_EMOJIS, GatewayIntent.GUILD_INVITES,
                 GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_VOICE_STATES,
@@ -53,7 +56,8 @@ public class MCPL {
                 new CmdUnban(bot),
                 new CmdPing(bot),
                 new CmdAnnounce(bot),
-                new CmdMute(bot)));
+                new CmdMute(bot),
+                new CmdUnmute(bot)));
 
         JDA jda=builder.build();
 

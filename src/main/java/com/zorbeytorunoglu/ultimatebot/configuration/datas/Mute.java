@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class Mute {
     private final Long memberId;
-    private Date muteExpiration;
-    private String reason;
+    private Date muteExpiration=null;
+    private String reason=null;
     static final ArrayList<Mute> mutes=new ArrayList<>();
     public Mute(long memberId) {
         this.memberId=memberId;

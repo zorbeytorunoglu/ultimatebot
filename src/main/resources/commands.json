@@ -10,5 +10,6 @@
   "unban": "unban",
   "ping": "ping",
   "announce": "announce",
-  "mute": "mute"
+  "mute": "mute",
+  "unmute": "unmute"
 }

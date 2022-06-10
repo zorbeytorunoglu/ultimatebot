@@ -14,8 +14,13 @@ public class Commands {
     private String ping;
     private String announce;
     private String mute;
+    private String unmute;
 
     public Commands() {}
+
+    public String getUnmute() {
+        return unmute;
+    }
 
     public String getMute() {
         return mute;

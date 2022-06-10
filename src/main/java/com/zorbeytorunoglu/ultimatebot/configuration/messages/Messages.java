@@ -104,8 +104,143 @@ public class Messages {
     private String justMuted;
     private String justMutedTitle;
     private String justMutedColor;
+    private String greaterThanZero;
+    private String greaterThanZeroTitle;
+    private String greaterThanZeroColor;
+    private String mutedUntil;
+    private String mutedUntilTitle;
+    private String mutedUntilColor;
+    private String muteReason;
+    private String muteReasonTitle;
+    private String muteReasonColor;
+    private String minutes;
+    private String hours;
+    private String hour;
+    private String minute;
+    private String muteNoReason;
+    private String forever;
+    private String unmuteUsage;
+    private String unmuteUsageTitle;
+    private String unmuteUsageColor;
+    private String memberNotMuted;
+    private String memberNotMutedTitle;
+    private String memberNotMutedColor;
+    private String notMuted;
+    private String notMutedTitle;
+    private String notMutedColor;
+    private String noLongerMuted;
+    private String noLongerMutedTitle;
+    private String noLongerMutedColor;
 
     public Messages() {}
+
+    public String getNoLongerMuted() {
+        return noLongerMuted;
+    }
+
+    public String getNoLongerMutedTitle() {
+        return noLongerMutedTitle;
+    }
+
+    public String getNoLongerMutedColor() {
+        return noLongerMutedColor;
+    }
+
+    public String getNotMuted() {
+        return notMuted;
+    }
+
+    public String getNotMutedTitle() {
+        return notMutedTitle;
+    }
+
+    public String getNotMutedColor() {
+        return notMutedColor;
+    }
+
+    public String getMemberNotMuted() {
+        return memberNotMuted;
+    }
+
+    public String getMemberNotMutedTitle() {
+        return memberNotMutedTitle;
+    }
+
+    public String getMemberNotMutedColor() {
+        return memberNotMutedColor;
+    }
+
+    public String getUnmuteUsage() {
+        return unmuteUsage;
+    }
+
+    public String getUnmuteUsageTitle() {
+        return unmuteUsageTitle;
+    }
+
+    public String getUnmuteUsageColor() {
+        return unmuteUsageColor;
+    }
+
+    public String getForever() {
+        return forever;
+    }
+
+    public String getMuteNoReason() {
+        return muteNoReason;
+    }
+
+    public String getHour() {
+        return hour;
+    }
+
+    public String getMinute() {
+        return minute;
+    }
+
+    public String getMinutes() {
+        return minutes;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public String getMuteReason() {
+        return muteReason;
+    }
+
+    public String getMuteReasonTitle() {
+        return muteReasonTitle;
+    }
+
+    public String getMuteReasonColor() {
+        return muteReasonColor;
+    }
+
+    public String getMutedUntil() {
+        return mutedUntil;
+    }
+
+    public String getMutedUntilTitle() {
+        return mutedUntilTitle;
+    }
+
+    public String getMutedUntilColor() {
+        return mutedUntilColor;
+    }
+
+    public String getGreaterThanZero() {
+        return greaterThanZero;
+    }
+
+    public String getGreaterThanZeroTitle() {
+        return greaterThanZeroTitle;
+    }
+
+    public String getGreaterThanZeroColor() {
+        return greaterThanZeroColor;
+    }
 
     public String getJustMuted() {
         return justMuted;

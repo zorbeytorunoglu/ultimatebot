@@ -131,8 +131,23 @@ public class Messages {
     private String noLongerMuted;
     private String noLongerMutedTitle;
     private String noLongerMutedColor;
+    private String biggerThanMaxMute;
+    private String biggerThanMaxMuteTitle;
+    private String biggerThanMaxMuteColor;
 
     public Messages() {}
+
+    public String getBiggerThanMaxMute() {
+        return biggerThanMaxMute;
+    }
+
+    public String getBiggerThanMaxMuteTitle() {
+        return biggerThanMaxMuteTitle;
+    }
+
+    public String getBiggerThanMaxMuteColor() {
+        return biggerThanMaxMuteColor;
+    }
 
     public String getNoLongerMuted() {
         return noLongerMuted;

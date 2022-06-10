@@ -124,5 +124,8 @@
   "notMutedColor": "RED",
   "noLongerMuted": "__%member%__ is no longer muted",
   "noLongerMutedTitle": "He can speak now :tada:",
-  "noLongerMutedColor": "GREEN"
+  "noLongerMutedColor": "GREEN",
+  "biggerThanMaxMute": "Specified minute should not be bigger than __%maxminute%__",
+  "biggerThanMaxMuteTitle": "That is too long bro :anger:",
+  "biggerThanMaxMuteColor": "RED"
 }

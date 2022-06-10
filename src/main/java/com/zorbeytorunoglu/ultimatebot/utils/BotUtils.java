@@ -2,6 +2,7 @@ package com.zorbeytorunoglu.ultimatebot.utils;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
 import com.zorbeytorunoglu.ultimatebot.configuration.datas.Mute;
+import com.zorbeytorunoglu.ultimatebot.services.Executor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
@@ -10,12 +11,9 @@ import java.awt.*;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BotUtils {
-
-    public static boolean fileExists(String fileName) {
-        return false;
-    }
 
     public static Activity getActivity(Bot bot) {
 
@@ -194,8 +192,7 @@ public class BotUtils {
     }
 
     public static Role getMutedRole(Bot bot, Guild guild) {
-
-        if (!guild.getRoles().stream().anyMatch(role -> role.getName().equals(bot.getSettingsHandler().getSettings().getMuteRoleName()))) {
+        if (!guild.getRoles().stream().anyMatch(role -> role.getName().equalsIgnoreCase(bot.getSettingsHandler().getSettings().getMuteRoleName()))) {
             Role muteRole=guild.createRole()
                     .setName(bot.getSettingsHandler().getSettings().getMuteRoleName())
                     .setColor(Color.GRAY)
@@ -210,11 +207,53 @@ public class BotUtils {
             return muteRole;
 
         } else {
-            return guild.getRoles().stream().filter(role -> role.getName().equalsIgnoreCase(
-                    bot.getSettingsHandler().getSettings().getMuteRoleName()
-            )).findFirst().get();
+            return guild.getRolesByName(bot.getSettingsHandler().getSettings().getMuteRoleName(),false).get(0);
         }
 
+    }
+
+    public static Role findRole(Member member, String name) {
+        List<Role> roles = member.getRoles();
+        return roles.stream()
+                .filter(role -> role.getName().equals(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public static void unMute(Bot bot, Guild guild, String memberId) {
+        Member member=guild.retrieveMemberById(memberId).complete();
+        if (member==null) return;
+        if (findRole(member,bot.getSettingsHandler().getSettings().getMuteRoleName())!=null) {
+            member.getGuild().removeRoleFromMember(member,getMutedRole(bot, member.getGuild())).queue();
+        }
+        if (getMute(member)!=null) {
+            Mute.getMutes().remove(getMute(member));
+        }
+    }
+
+    public static void mute(Bot bot, Member member) {
+        if (!member.getRoles().contains(getMutedRole(bot, member.getGuild()))) {
+            member.getGuild().addRoleToMember(member,getMutedRole(bot, member.getGuild())).queue();
+        }
+    }
+
+    public static void mute(Bot bot, Member member, int minutes) {
+        if (!member.getRoles().contains(getMutedRole(bot, member.getGuild()))) {
+            member.getGuild().addRoleToMember(member,getMutedRole(bot, member.getGuild())).queue();
+            Executor.scheduleDelayedTask(() -> BotUtils.unMute(bot, member.getGuild(), member.getId()), minutes, TimeUnit.MINUTES);
+        }
+    }
+
+    public static void removeMute(Mute mute) {
+        if (Mute.getMutes().contains(mute)) Mute.getMutes().remove(mute);
+    }
+
+    public static boolean isMuted(Bot bot, Member member) {
+        if (findRole(member, bot.getSettingsHandler().getSettings().getMuteRoleName())!=null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

@@ -6,3 +6,6 @@ mute:
   max-mute-min: 2880
 purge:
   max-number: 100
+slowmode:
+  default: 2
+  max-minutes: 360

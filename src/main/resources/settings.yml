@@ -9,3 +9,6 @@ purge:
 slowmode:
   default: 2
   max-minutes: 360
+warns:
+  limit: 3
+  action: ban

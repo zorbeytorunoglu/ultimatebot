@@ -3,7 +3,6 @@ package com.zorbeytorunoglu.ultimatebot.commands;
 import com.zorbeytorunoglu.ultimatebot.Bot;
 import com.zorbeytorunoglu.ultimatebot.configuration.datas.Mute;
 import com.zorbeytorunoglu.ultimatebot.configuration.messages.Messages;
-import com.zorbeytorunoglu.ultimatebot.services.Executor;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;
 import com.zorbeytorunoglu.ultimatebot.utils.StringUtils;
 import net.dv8tion.jda.api.entities.Member;
@@ -148,7 +147,7 @@ public class CmdMute implements MCPLCommand {
 
             Mute mute=new Mute(member.getIdLong());
 
-            Date expiresIn = new Date(Calendar.getInstance().getTimeInMillis() + (10 * 60 * 1000));
+            Date expiresIn = new Date(Calendar.getInstance().getTimeInMillis() + (minutes * 60 * 1000));
 
             mute.setMuteExpiration(expiresIn);
 
@@ -212,7 +211,7 @@ public class CmdMute implements MCPLCommand {
 
             Mute mute=new Mute(member.getIdLong());
 
-            Date expiresIn = new Date(Calendar.getInstance().getTimeInMillis() + (10 * 60 * 1000));
+            Date expiresIn = new Date(Calendar.getInstance().getTimeInMillis() + (minutes * 60 * 1000));
 
             mute.setMuteExpiration(expiresIn);
 

@@ -63,6 +63,8 @@ public class MCPL {
 
         bot.setJda(jda);
 
+        dataHandler.load(bot);
+
     }
 
 }

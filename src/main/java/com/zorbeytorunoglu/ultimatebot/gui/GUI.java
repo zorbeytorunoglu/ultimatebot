@@ -1,6 +1,7 @@
 package com.zorbeytorunoglu.ultimatebot.gui;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
+import com.zorbeytorunoglu.ultimatebot.tasks.Shutdown;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,10 +20,9 @@ public class GUI extends JFrame {
         console = new ConsolePanel();
     }
 
-    public void init()
-    {
+    public void init() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("MCPL Discord Bot");
+        setTitle("Ultimate Discord Bot");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon.png")));
         JTabbedPane tabs = new JTabbedPane();
         tabs.add("Console", console);
@@ -33,8 +33,8 @@ public class GUI extends JFrame {
         addWindowListener(new WindowListener()
         {
             @Override public void windowOpened(WindowEvent e) { /* unused */ }
-            @Override public void windowClosing(WindowEvent e)
-            {
+            @Override public void windowClosing(WindowEvent e) {
+                Shutdown.init(bot);
                 try
                 {
                     bot.getJda().shutdown();

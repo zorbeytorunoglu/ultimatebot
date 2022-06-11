@@ -4,3 +4,5 @@ activity-label: to your dreams
 mute:
   role-name: Muted
   max-mute-min: 2880
+purge:
+  max-number: 100

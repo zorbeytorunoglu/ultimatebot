@@ -17,8 +17,13 @@ public class Commands {
     private String unmute;
     private String purge;
     private String slowmode;
+    private String warn;
 
     public Commands() {}
+
+    public String getWarn() {
+        return warn;
+    }
 
     public String getSlowmode() {
         return slowmode;

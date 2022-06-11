@@ -155,8 +155,88 @@ public class Messages {
     private String slowmodeDisabled;
     private String slowmodeDisabledTitle;
     private String slowmodeDisabledColor;
+    private String warnUsage;
+    private String warnUsageTitle;
+    private String warnUsageColor;
+    private String warnBanReason;
+    private String warnBanned;
+    private String warnBannedTitle;
+    private String warnBannedColor;
+    private String warnKicked;
+    private String warnKickedTitle;
+    private String warnKickedColor;
+    private String warned;
+    private String warnedTitle;
+    private String warnedColor;
+    private String warnedReason;
+    private String warnedReasonTitle;
+    private String warnedReasonColor;
 
     public Messages() {}
+
+    public String getWarned() {
+        return warned;
+    }
+
+    public String getWarnedTitle() {
+        return warnedTitle;
+    }
+
+    public String getWarnedColor() {
+        return warnedColor;
+    }
+
+    public String getWarnedReason() {
+        return warnedReason;
+    }
+
+    public String getWarnedReasonTitle() {
+        return warnedReasonTitle;
+    }
+
+    public String getWarnedReasonColor() {
+        return warnedReasonColor;
+    }
+
+    public String getWarnKicked() {
+        return warnKicked;
+    }
+
+    public String getWarnKickedTitle() {
+        return warnKickedTitle;
+    }
+
+    public String getWarnKickedColor() {
+        return warnKickedColor;
+    }
+
+    public String getWarnBanned() {
+        return warnBanned;
+    }
+
+    public String getWarnBannedTitle() {
+        return warnBannedTitle;
+    }
+
+    public String getWarnBannedColor() {
+        return warnBannedColor;
+    }
+
+    public String getWarnBanReason() {
+        return warnBanReason;
+    }
+
+    public String getWarnUsage() {
+        return warnUsage;
+    }
+
+    public String getWarnUsageTitle() {
+        return warnUsageTitle;
+    }
+
+    public String getWarnUsageColor() {
+        return warnUsageColor;
+    }
 
     public String getSlowmodeDisabled() {
         return slowmodeDisabled;

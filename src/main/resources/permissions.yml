@@ -43,3 +43,6 @@ commands:
   slowmode:
     users: []
     roles: []
+  warn:
+    users: []
+    roles: []

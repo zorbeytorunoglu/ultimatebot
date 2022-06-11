@@ -13,5 +13,6 @@
   "mute": "mute",
   "unmute": "unmute",
   "purge": "purge",
-  "slowmode": "slowmode"
+  "slowmode": "slowmode",
+  "warn": "warn"
 }

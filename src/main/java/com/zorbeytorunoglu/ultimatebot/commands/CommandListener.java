@@ -21,6 +21,7 @@ public class CommandListener extends ListenerAdapter {
     private final CmdUnmute cmdUnmute;
     private final CmdPurge cmdPurge;
     private final CmdSlowmode cmdSlowmode;
+    private final CmdWarn cmdWarn;
 
     public CommandListener(Bot bot, CmdSetStatus cmdSetStatus,
                            CmdSetPrefix cmdSetPrefix,
@@ -30,7 +31,7 @@ public class CommandListener extends ListenerAdapter {
                            CmdUnban cmdUnban, CmdPing cmdPing,
                            CmdAnnounce cmdAnnounce, CmdMute cmdMute,
                            CmdUnmute cmdUnmute, CmdPurge cmdPurge,
-                           CmdSlowmode cmdSlowmode) {
+                           CmdSlowmode cmdSlowmode, CmdWarn cmdWarn) {
         this.bot=bot;
         this.cmdSetStatus=cmdSetStatus;
         this.cmdSetPrefix=cmdSetPrefix;
@@ -45,6 +46,7 @@ public class CommandListener extends ListenerAdapter {
         this.cmdUnmute=cmdUnmute;
         this.cmdPurge=cmdPurge;
         this.cmdSlowmode=cmdSlowmode;
+        this.cmdWarn=cmdWarn;
     }
 
     @Override
@@ -102,6 +104,10 @@ public class CommandListener extends ListenerAdapter {
 
         if (args[0].equals(cmdSlowmode.getCommand())) {
             cmdSlowmode.execute(bot,event,args); return;
+        }
+
+        if (args[0].equals(cmdWarn.getCommand())) {
+            cmdWarn.execute(bot,event,args); return;
         }
 
     }

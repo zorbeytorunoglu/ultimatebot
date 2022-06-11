@@ -38,11 +38,13 @@ public class DataHandler {
     public void load(Bot bot) {
         Mute.setBot(bot);
         Mute.load(dataResource,configuration);
+        Warn.load(this);
     }
 
     public void save(Bot bot) {
         try {
             Mute.save(yamlConfiguration,configuration,dataResource);
+            Warn.save(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -148,5 +148,21 @@
   "slowmodeEnabledColor": "RED",
   "slowmodeDisabled": "Slow mode is now disabled",
   "slowmodeDisabledTitle": "Go go go! :tada:",
-  "slowmodeDisabledColor": "RED"
+  "slowmodeDisabledColor": "RED",
+  "warnUsage": "%command% <member> [reason]",
+  "warnUsageTitle": "You gotta use it right :robot:",
+  "warnUsageColor": "RED",
+  "warnBanReason": "%member% is banned because of exceeding the warn limit",
+  "warnBanned": "%member% is banned because of exceeding the warn limit",
+  "warnBannedTitle": "Warned you :warning:",
+  "warnBannedColor": "RED",
+  "warnKicked": "%member% is kicked because of exceeding the warn limit",
+  "warnKickedTitle": "Told you to behave :warning:",
+  "warnKickedColor": "RED",
+  "warned": "%member% is warned by %staff%, he now has __%warns%__ warning(s).",
+  "warnedTitle": "Be Warned :warning:",
+  "warnedColor": "RED",
+  "warnedReason": "%member% is warned for __%reason%__ by %staff%, he has __%warns%__ warn(s) now",
+  "warnedReasonTitle": "Warning :warning:",
+  "warnedReasonColor": "RED"
 }

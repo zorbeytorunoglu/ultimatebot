@@ -12,6 +12,8 @@ public class SettingsContainer {
     public final Integer maxPurgeNumber;
     public final Integer maxSlowmode;
     public final Integer defaultSlowmode;
+    public final Integer warnLimit;
+    public final String warnAction;
 
     public SettingsContainer(Configuration configuration) {
         this.token=configuration.getString("token");
@@ -22,6 +24,7 @@ public class SettingsContainer {
         this.maxPurgeNumber=configuration.getInt("purge.max-number");
         this.maxSlowmode=configuration.getInt("slowmode.max-minutes");
         this.defaultSlowmode=configuration.getInt("slowmode.default");
+        this.warnLimit=configuration.getInt("warns.limit");
+        this.warnAction=configuration.getString("warns.action");
     }
-
 }

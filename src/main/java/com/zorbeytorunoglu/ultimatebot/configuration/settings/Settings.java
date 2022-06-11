@@ -26,5 +26,7 @@ public class Settings {
     public Integer getMaxPurgeNumber() { return settingsContainer.maxPurgeNumber; }
     public Integer getMaxSlowmode() { return settingsContainer.maxSlowmode; }
     public Integer getDefaultSlowmode() { return settingsContainer.defaultSlowmode; }
+    public Integer getWarnLimit() { return settingsContainer.warnLimit; }
+    public String getWarnAction() { return settingsContainer.warnAction; }
 
 }

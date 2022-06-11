@@ -20,6 +20,10 @@ public class Executor {
         scheduledExecutorService.schedule(runnable,delay,timeUnit);
     }
 
+    public static void scheduleDelayedTask(Runnable runnable, long delay, TimeUnit timeUnit) {
+        scheduledExecutorService.schedule(runnable,delay,timeUnit);
+    }
+
     public static void scheduleRepeatingTask(Runnable runnable, int delay, int period) {
         scheduledExecutorService.scheduleAtFixedRate(runnable,delay,period,TimeUnit.MILLISECONDS);
     }

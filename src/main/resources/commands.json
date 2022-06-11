@@ -12,5 +12,6 @@
   "announce": "announce",
   "mute": "mute",
   "unmute": "unmute",
-  "purge": "purge"
+  "purge": "purge",
+  "slowmode": "slowmode"
 }

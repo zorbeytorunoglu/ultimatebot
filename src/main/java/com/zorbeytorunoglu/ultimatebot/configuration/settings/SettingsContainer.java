@@ -10,6 +10,8 @@ public class SettingsContainer {
     public final String mutedRoleName;
     public final Integer maxMuteMinute;
     public final Integer maxPurgeNumber;
+    public final Integer maxSlowmode;
+    public final Integer defaultSlowmode;
 
     public SettingsContainer(Configuration configuration) {
         this.token=configuration.getString("token");
@@ -18,6 +20,8 @@ public class SettingsContainer {
         this.mutedRoleName=configuration.getString("mute.role-name");
         this.maxMuteMinute=configuration.getInt("mute.max-mute-min");
         this.maxPurgeNumber=configuration.getInt("purge.max-number");
+        this.maxSlowmode=configuration.getInt("slowmode.max-minutes");
+        this.defaultSlowmode=configuration.getInt("slowmode.default");
     }
 
 }

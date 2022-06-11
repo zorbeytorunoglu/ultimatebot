@@ -136,5 +136,17 @@
   "purgeNumberTooBigColor": "RED",
   "purgeComplete": "Purge is complete! We have removed __%number%__ messages in this channel. We were fast, weren't we",
   "purgeCompleteTitle": "Cleaned the mess up :fire:",
-  "purgeCompleteColor": "RED"
+  "purgeCompleteColor": "RED",
+  "slowmodeUsage": "%command% [minutes (use 0 to deactivate)]",
+  "slowmodeUsageTitle": "That is not how you use it sir :kiss:",
+  "slowmodeUsageColor": "RED",
+  "slowmodeMinutesTooBig": "Number can not be bigger than %max%",
+  "slowmodeMinutesTooBigTitle": "You flew too close to the sun :sun_with_face:",
+  "slowmodeMinutesTooBigColor": "RED",
+  "slowmodeEnabled": "Slow mode is now enabled in this channel",
+  "slowmodeEnabledTitle": "Everyone, take it easy :hand_splayed:",
+  "slowmodeEnabledColor": "RED",
+  "slowmodeDisabled": "Slow mode is now disabled",
+  "slowmodeDisabledTitle": "Go go go! :tada:",
+  "slowmodeDisabledColor": "RED"
 }

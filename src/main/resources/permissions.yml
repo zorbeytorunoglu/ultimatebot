@@ -40,3 +40,6 @@ commands:
   purge:
     users: []
     roles: []
+  slowmode:
+    users: []
+    roles: []

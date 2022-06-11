@@ -24,5 +24,7 @@ public class Settings {
 
     public Integer getMaxMuteMinute() { return settingsContainer.maxMuteMinute; }
     public Integer getMaxPurgeNumber() { return settingsContainer.maxPurgeNumber; }
+    public Integer getMaxSlowmode() { return settingsContainer.maxSlowmode; }
+    public Integer getDefaultSlowmode() { return settingsContainer.defaultSlowmode; }
 
 }

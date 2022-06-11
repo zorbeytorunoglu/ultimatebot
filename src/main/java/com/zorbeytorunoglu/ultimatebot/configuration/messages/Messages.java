@@ -143,8 +143,68 @@ public class Messages {
     private String purgeComplete;
     private String purgeCompleteTitle;
     private String purgeCompleteColor;
+    private String slowmodeUsage;
+    private String slowmodeUsageTitle;
+    private String slowmodeUsageColor;
+    private String slowmodeMinutesTooBig;
+    private String slowmodeMinutesTooBigTitle;
+    private String slowmodeMinutesTooBigColor;
+    private String slowmodeEnabled;
+    private String slowmodeEnabledTitle;
+    private String slowmodeEnabledColor;
+    private String slowmodeDisabled;
+    private String slowmodeDisabledTitle;
+    private String slowmodeDisabledColor;
 
     public Messages() {}
+
+    public String getSlowmodeDisabled() {
+        return slowmodeDisabled;
+    }
+
+    public String getSlowmodeDisabledTitle() {
+        return slowmodeDisabledTitle;
+    }
+
+    public String getSlowmodeDisabledColor() {
+        return slowmodeDisabledColor;
+    }
+
+    public String getSlowmodeEnabled() {
+        return slowmodeEnabled;
+    }
+
+    public String getSlowmodeEnabledTitle() {
+        return slowmodeEnabledTitle;
+    }
+
+    public String getSlowmodeEnabledColor() {
+        return slowmodeEnabledColor;
+    }
+
+    public String getSlowmodeMinutesTooBig() {
+        return slowmodeMinutesTooBig;
+    }
+
+    public String getSlowmodeMinutesTooBigTitle() {
+        return slowmodeMinutesTooBigTitle;
+    }
+
+    public String getSlowmodeMinutesTooBigColor() {
+        return slowmodeMinutesTooBigColor;
+    }
+
+    public String getSlowmodeUsage() {
+        return slowmodeUsage;
+    }
+
+    public String getSlowmodeUsageTitle() {
+        return slowmodeUsageTitle;
+    }
+
+    public String getSlowmodeUsageColor() {
+        return slowmodeUsageColor;
+    }
 
     public String getPurgeComplete() {
         return purgeComplete;

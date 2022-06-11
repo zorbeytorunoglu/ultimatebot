@@ -16,8 +16,13 @@ public class Commands {
     private String mute;
     private String unmute;
     private String purge;
+    private String slowmode;
 
     public Commands() {}
+
+    public String getSlowmode() {
+        return slowmode;
+    }
 
     public String getPurge() {
         return purge;

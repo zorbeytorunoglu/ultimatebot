@@ -58,7 +58,8 @@ public class MCPL {
                 new CmdAnnounce(bot),
                 new CmdMute(bot),
                 new CmdUnmute(bot),
-                new CmdPurge(bot)));
+                new CmdPurge(bot),
+                new CmdSlowmode(bot)));
 
         JDA jda=builder.build();
 

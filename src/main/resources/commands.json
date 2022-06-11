@@ -11,5 +11,6 @@
   "ping": "ping",
   "announce": "announce",
   "mute": "mute",
-  "unmute": "unmute"
+  "unmute": "unmute",
+  "purge": "purge"
 }

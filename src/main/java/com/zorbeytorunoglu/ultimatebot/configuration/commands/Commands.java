@@ -15,8 +15,13 @@ public class Commands {
     private String announce;
     private String mute;
     private String unmute;
+    private String purge;
 
     public Commands() {}
+
+    public String getPurge() {
+        return purge;
+    }
 
     public String getUnmute() {
         return unmute;

@@ -9,6 +9,7 @@ public class SettingsContainer {
     public final String activityLabel;
     public final String mutedRoleName;
     public final Integer maxMuteMinute;
+    public final Integer maxPurgeNumber;
 
     public SettingsContainer(Configuration configuration) {
         this.token=configuration.getString("token");
@@ -16,6 +17,7 @@ public class SettingsContainer {
         this.activityLabel=configuration.getString("activity-label");
         this.mutedRoleName=configuration.getString("mute.role-name");
         this.maxMuteMinute=configuration.getInt("mute.max-mute-min");
+        this.maxPurgeNumber=configuration.getInt("purge.max-number");
     }
 
 }

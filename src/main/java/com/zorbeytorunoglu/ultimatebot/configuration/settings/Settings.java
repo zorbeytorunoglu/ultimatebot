@@ -23,5 +23,6 @@ public class Settings {
     public String getMuteRoleName() { return settingsContainer.mutedRoleName; }
 
     public Integer getMaxMuteMinute() { return settingsContainer.maxMuteMinute; }
+    public Integer getMaxPurgeNumber() { return settingsContainer.maxPurgeNumber; }
 
 }

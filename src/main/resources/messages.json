@@ -127,5 +127,14 @@
   "noLongerMutedColor": "GREEN",
   "biggerThanMaxMute": "Specified minute should not be bigger than __%maxminute%__",
   "biggerThanMaxMuteTitle": "That is too long bro :anger:",
-  "biggerThanMaxMuteColor": "RED"
+  "biggerThanMaxMuteColor": "RED",
+  "purgeUsage": "%command% <message-count>",
+  "purgeUsageTitle": "Specify a Number :anger:",
+  "purgeUsageColor": "RED",
+  "purgeNumberTooBig": "Number can't be bigger than %max%",
+  "purgeNumberTooBigTitle": "That is too much :alien:",
+  "purgeNumberTooBigColor": "RED",
+  "purgeComplete": "Purge is complete! We have removed __%number%__ messages in this channel. We were fast, weren't we",
+  "purgeCompleteTitle": "Cleaned the mess up :fire:",
+  "purgeCompleteColor": "RED"
 }

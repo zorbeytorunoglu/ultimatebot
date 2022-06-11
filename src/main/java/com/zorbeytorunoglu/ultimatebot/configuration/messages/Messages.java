@@ -134,8 +134,53 @@ public class Messages {
     private String biggerThanMaxMute;
     private String biggerThanMaxMuteTitle;
     private String biggerThanMaxMuteColor;
+    private String purgeUsage;
+    private String purgeUsageTitle;
+    private String purgeUsageColor;
+    private String purgeNumberTooBig;
+    private String purgeNumberTooBigTitle;
+    private String purgeNumberTooBigColor;
+    private String purgeComplete;
+    private String purgeCompleteTitle;
+    private String purgeCompleteColor;
 
     public Messages() {}
+
+    public String getPurgeComplete() {
+        return purgeComplete;
+    }
+
+    public String getPurgeCompleteTitle() {
+        return purgeCompleteTitle;
+    }
+
+    public String getPurgeCompleteColor() {
+        return purgeCompleteColor;
+    }
+
+    public String getPurgeNumberTooBig() {
+        return purgeNumberTooBig;
+    }
+
+    public String getPurgeNumberTooBigTitle() {
+        return purgeNumberTooBigTitle;
+    }
+
+    public String getPurgeNumberTooBigColor() {
+        return purgeNumberTooBigColor;
+    }
+
+    public String getPurgeUsage() {
+        return purgeUsage;
+    }
+
+    public String getPurgeUsageTitle() {
+        return purgeUsageTitle;
+    }
+
+    public String getPurgeUsageColor() {
+        return purgeUsageColor;
+    }
 
     public String getBiggerThanMaxMute() {
         return biggerThanMaxMute;

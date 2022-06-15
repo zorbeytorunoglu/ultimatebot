@@ -1,6 +1,11 @@
 package com.zorbeytorunoglu.ultimatebot;
 
 import com.zorbeytorunoglu.ultimatebot.commands.*;
+import com.zorbeytorunoglu.ultimatebot.commands.admin.CmdSetPrefix;
+import com.zorbeytorunoglu.ultimatebot.commands.admin.CmdSetStatus;
+import com.zorbeytorunoglu.ultimatebot.commands.misc.CmdAnnounce;
+import com.zorbeytorunoglu.ultimatebot.commands.misc.CmdPing;
+import com.zorbeytorunoglu.ultimatebot.commands.moderation.*;
 import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdTicketPanel;
 import com.zorbeytorunoglu.ultimatebot.configuration.Resource;
 import com.zorbeytorunoglu.ultimatebot.configuration.commands.CommandsHandler;

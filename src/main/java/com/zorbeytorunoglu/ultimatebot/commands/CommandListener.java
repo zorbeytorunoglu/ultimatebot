@@ -1,6 +1,11 @@
 package com.zorbeytorunoglu.ultimatebot.commands;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
+import com.zorbeytorunoglu.ultimatebot.commands.admin.CmdSetPrefix;
+import com.zorbeytorunoglu.ultimatebot.commands.admin.CmdSetStatus;
+import com.zorbeytorunoglu.ultimatebot.commands.misc.CmdAnnounce;
+import com.zorbeytorunoglu.ultimatebot.commands.misc.CmdPing;
+import com.zorbeytorunoglu.ultimatebot.commands.moderation.*;
 import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdTicketPanel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

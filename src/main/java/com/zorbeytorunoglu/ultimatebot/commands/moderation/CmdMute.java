@@ -1,6 +1,7 @@
-package com.zorbeytorunoglu.ultimatebot.commands;
+package com.zorbeytorunoglu.ultimatebot.commands.moderation;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
+import com.zorbeytorunoglu.ultimatebot.commands.MCPLCommand;
 import com.zorbeytorunoglu.ultimatebot.configuration.datas.Mute;
 import com.zorbeytorunoglu.ultimatebot.configuration.messages.Messages;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;

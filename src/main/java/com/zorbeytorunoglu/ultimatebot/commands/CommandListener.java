@@ -1,6 +1,7 @@
 package com.zorbeytorunoglu.ultimatebot.commands;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
+import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdTicketPanel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -22,6 +23,7 @@ public class CommandListener extends ListenerAdapter {
     private final CmdPurge cmdPurge;
     private final CmdSlowmode cmdSlowmode;
     private final CmdWarn cmdWarn;
+    private final CmdTicketPanel cmdTicketPanel;
 
     public CommandListener(Bot bot, CmdSetStatus cmdSetStatus,
                            CmdSetPrefix cmdSetPrefix,
@@ -31,7 +33,8 @@ public class CommandListener extends ListenerAdapter {
                            CmdUnban cmdUnban, CmdPing cmdPing,
                            CmdAnnounce cmdAnnounce, CmdMute cmdMute,
                            CmdUnmute cmdUnmute, CmdPurge cmdPurge,
-                           CmdSlowmode cmdSlowmode, CmdWarn cmdWarn) {
+                           CmdSlowmode cmdSlowmode, CmdWarn cmdWarn,
+                           CmdTicketPanel cmdTicketPanel) {
         this.bot=bot;
         this.cmdSetStatus=cmdSetStatus;
         this.cmdSetPrefix=cmdSetPrefix;
@@ -47,6 +50,7 @@ public class CommandListener extends ListenerAdapter {
         this.cmdPurge=cmdPurge;
         this.cmdSlowmode=cmdSlowmode;
         this.cmdWarn=cmdWarn;
+        this.cmdTicketPanel=cmdTicketPanel;
     }
 
     @Override
@@ -108,6 +112,10 @@ public class CommandListener extends ListenerAdapter {
 
         if (args[0].equals(cmdWarn.getCommand())) {
             cmdWarn.execute(bot,event,args); return;
+        }
+
+        if (args[0].equals(cmdTicketPanel.getCommand())) {
+            cmdTicketPanel.execute(bot,event,args); return;
         }
 
     }

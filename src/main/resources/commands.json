@@ -14,5 +14,6 @@
   "unmute": "unmute",
   "purge": "purge",
   "slowmode": "slowmode",
-  "warn": "warn"
+  "warn": "warn",
+  "ticketpanel": "ticketpanel"
 }

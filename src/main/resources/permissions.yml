@@ -46,3 +46,6 @@ commands:
   warn:
     users: []
     roles: []
+  ticketpanel:
+    users: []
+    roles: []

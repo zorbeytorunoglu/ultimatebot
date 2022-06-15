@@ -1,0 +1,57 @@
+'1':
+  title: '**Ticket Creation**'
+  author: MCPL
+  color: ORANGE
+  footer: MCPL Services
+  footer-img-url: https://i.im.ge/2021/11/10/oYrw9F.png
+  thumbnail-img-url: https://i.im.ge/2021/11/10/oYrmu6.png
+  author-url: https://mc-marketi.com
+  author-img-url: https://i.im.ge/2021/11/10/oYr9fz.png
+  description: Do you need a plugin, a server setup, a logo, a build? You can find whatever you need with the best offer in here!
+  fields:
+    '1':
+      title: '**Place an order**'
+      description: We make the best products with the best price guarantee! So why don't you place an order right now! Click <:shoppingcart:908044723539820554> down blow!
+    '2':
+      title: '**Support Ticket**'
+      description: Do you need support about anything? You always have our support whether you are a client or not! Click <:paperplane:908044723237830686> button down below!
+    '3':
+      title: '**Apply**'
+      description: We are always hiring __freelancers__ and you are always welcome to join us! Just click <:bluepencil:908044723648856095> icon down below and wait for us!
+  buttons:
+    '1':
+      id: order
+      label: Place an Order
+      emoji: '<:shoppingcart:908044723539820554>'
+      ticket:
+        category: '986452451353845820'
+        name-format: support-%user_name%
+        roles-to-be-added:
+          - Investor
+        ping-roles:
+          - Investor
+        start-embed:
+          author: MCPL
+          author-url: https://mc-marketi.com
+          author-img-url: https://i.im.ge/2021/11/10/oYr9fz.png
+          title: '**Order Ticket Created!** :star:'
+          description: Hello **<@%user_id%>**! Our <@&916372754662572133> team will be here to assist you for your order!
+          color: ORANGE
+    '2':
+      id: anan
+      label: Apply
+      emoji: '<:ip:924670131039264769>'
+      ticket:
+        category: '986452451353845820'
+        name-format: ip-%user_name%
+        roles-to-be-added:
+          - Investor
+        ping-roles:
+          - Investor
+        start-embed:
+          author: MCPL
+          author-url: https://mc-marketi.com
+          author-img-url: https://i.im.ge/2021/11/10/oYr9fz.png
+          title: '**Order Ticket Created!** :star:'
+          description: Hello **<@%user_id%>**! Our <@&916372754662572133> team will be here to assist you for your order!
+          color: ORANGE

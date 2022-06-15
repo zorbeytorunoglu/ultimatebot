@@ -164,5 +164,11 @@
   "warnedColor": "RED",
   "warnedReason": "%member% is warned for __%reason%__ by %staff%, he has __%warns%__ warn(s) now",
   "warnedReasonTitle": "Warning :warning:",
-  "warnedReasonColor": "RED"
+  "warnedReasonColor": "RED",
+  "ticketPanelUsage": "%command% <panel-id>",
+  "ticketPanelUsageTitle": "Use it correct :anger:",
+  "ticketPanelUsageColor": "RED",
+  "ticketPanelNotFound": "Ticket panel could not be found",
+  "ticketPanelNotFoundTitle": "Are you sure it exists?! :skull:",
+  "ticketPanelNotFoundColor": "RED"
 }

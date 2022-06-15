@@ -18,8 +18,13 @@ public class Commands {
     private String purge;
     private String slowmode;
     private String warn;
+    private String ticketpanel;
 
     public Commands() {}
+
+    public String getTicketpanel() {
+        return ticketpanel;
+    }
 
     public String getWarn() {
         return warn;

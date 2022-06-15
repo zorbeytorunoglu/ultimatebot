@@ -171,8 +171,38 @@ public class Messages {
     private String warnedReason;
     private String warnedReasonTitle;
     private String warnedReasonColor;
+    private String ticketPanelUsage;
+    private String ticketPanelUsageTitle;
+    private String ticketPanelUsageColor;
+    private String ticketPanelNotFound;
+    private String ticketPanelNotFoundTitle;
+    private String ticketPanelNotFoundColor;
 
     public Messages() {}
+
+    public String getTicketPanelNotFound() {
+        return ticketPanelNotFound;
+    }
+
+    public String getTicketPanelNotFoundTitle() {
+        return ticketPanelNotFoundTitle;
+    }
+
+    public String getTicketPanelNotFoundColor() {
+        return ticketPanelNotFoundColor;
+    }
+
+    public String getTicketPanelUsage() {
+        return ticketPanelUsage;
+    }
+
+    public String getTicketPanelUsageTitle() {
+        return ticketPanelUsageTitle;
+    }
+
+    public String getTicketPanelUsageColor() {
+        return ticketPanelUsageColor;
+    }
 
     public String getWarned() {
         return warned;

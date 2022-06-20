@@ -12,3 +12,5 @@ slowmode:
 warns:
   limit: 3
   action: ban
+tickets:
+  member-ticket-limit: 2

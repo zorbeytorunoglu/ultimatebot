@@ -1,4 +1,4 @@
-package com.zorbeytorunoglu.ultimatebot.configuration.datas;
+package com.zorbeytorunoglu.ultimatebot.configuration.data;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
 import com.zorbeytorunoglu.ultimatebot.configuration.Configuration;
@@ -36,18 +36,18 @@ public class DataHandler {
     public YamlConfiguration getYamlConfiguration() { return yamlConfiguration; }
 
     public void load(Bot bot) {
-        Mute.setBot(bot);
-        Mute.load(dataResource,configuration);
+        Mute.load(dataResource,configuration,bot);
         Warn.load(this);
+        Ticket.load(bot,configuration);
     }
 
     public void save(Bot bot) {
         try {
-            Mute.save(yamlConfiguration,configuration,dataResource);
+            Mute.save(this);
             Warn.save(this);
+            Ticket.save(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 }

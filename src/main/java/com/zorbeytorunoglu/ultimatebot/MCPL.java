@@ -9,11 +9,12 @@ import com.zorbeytorunoglu.ultimatebot.commands.moderation.*;
 import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdTicketPanel;
 import com.zorbeytorunoglu.ultimatebot.configuration.Resource;
 import com.zorbeytorunoglu.ultimatebot.configuration.commands.CommandsHandler;
-import com.zorbeytorunoglu.ultimatebot.configuration.datas.DataHandler;
+import com.zorbeytorunoglu.ultimatebot.configuration.data.DataHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.messages.MessageHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.settings.SettingsHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.tickets.TicketHandler;
 import com.zorbeytorunoglu.ultimatebot.gui.GUI;
+import com.zorbeytorunoglu.ultimatebot.listeners.Ticket;
 import com.zorbeytorunoglu.ultimatebot.permissions.PermissionHandler;
 import com.zorbeytorunoglu.ultimatebot.services.Executor;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;
@@ -55,7 +56,9 @@ public class MCPL {
 
         builder.setActivity(BotUtils.getActivity(bot));
 
-        builder.addEventListeners(new CommandListener(bot,
+        builder.addEventListeners(new Ticket(bot),
+
+                new CommandListener(bot,
                 new CmdSetStatus(bot),
                 new CmdSetPrefix(bot),
                 new CmdGivePermission(bot),

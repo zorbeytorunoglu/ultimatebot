@@ -1,7 +1,7 @@
 package com.zorbeytorunoglu.ultimatebot.utils;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
-import com.zorbeytorunoglu.ultimatebot.configuration.datas.Mute;
+import com.zorbeytorunoglu.ultimatebot.configuration.data.Mute;
 import com.zorbeytorunoglu.ultimatebot.services.Executor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;

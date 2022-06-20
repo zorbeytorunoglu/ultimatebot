@@ -28,5 +28,6 @@ public class Settings {
     public Integer getDefaultSlowmode() { return settingsContainer.defaultSlowmode; }
     public Integer getWarnLimit() { return settingsContainer.warnLimit; }
     public String getWarnAction() { return settingsContainer.warnAction; }
+    public Integer getMemberTicketLimit() { return settingsContainer.memberTicketLimit; }
 
 }

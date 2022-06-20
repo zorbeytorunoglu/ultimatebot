@@ -14,6 +14,7 @@ public class SettingsContainer {
     public final Integer defaultSlowmode;
     public final Integer warnLimit;
     public final String warnAction;
+    public final Integer memberTicketLimit;
 
     public SettingsContainer(Configuration configuration) {
         this.token=configuration.getString("token");
@@ -26,5 +27,6 @@ public class SettingsContainer {
         this.defaultSlowmode=configuration.getInt("slowmode.default");
         this.warnLimit=configuration.getInt("warns.limit");
         this.warnAction=configuration.getString("warns.action");
+        this.memberTicketLimit=configuration.getInt("tickets.member-ticket-limit");
     }
 }

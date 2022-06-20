@@ -1,4 +1,4 @@
-package com.zorbeytorunoglu.ultimatebot.configuration.datas;
+package com.zorbeytorunoglu.ultimatebot.configuration.data;
 
 import com.zorbeytorunoglu.ultimatebot.Bot;
 import com.zorbeytorunoglu.ultimatebot.configuration.Configuration;
@@ -20,7 +20,6 @@ public class Mute {
     private Date muteExpiration=null;
     private String reason=null;
     static final ArrayList<Mute> mutes=new ArrayList<>();
-    private static Bot bot=null;
 
     public Mute(long memberId) {
         this.memberId=memberId;
@@ -44,15 +43,7 @@ public class Mute {
         return mutes;
     }
 
-    public static void setBot(Bot bot) {
-        Mute.bot = bot;
-    }
-
-    private static Bot getBot() {
-        return bot;
-    }
-
-    public static void load(Resource dataResource, Configuration configuration) {
+    public static void load(Resource dataResource, Configuration configuration, Bot bot) {
         if (!dataResource.getFile().exists()) return;
         for (String id:configuration.getSection("mutes").getKeys()) {
             Mute mute=new Mute(Long.parseLong(id));
@@ -86,7 +77,6 @@ public class Mute {
 
         }
 
-
         try {
             bot.getDataHandler().getYamlConfiguration().save(configuration,dataResource.getFile());
         } catch (IOException e) {
@@ -95,17 +85,17 @@ public class Mute {
 
     }
 
-    public static void save(YamlConfiguration yamlConfiguration, Configuration configuration, Resource dataResource) throws IOException {
+    public static void save(DataHandler dataHandler) throws IOException {
         if (Mute.getMutes().isEmpty()) return;
         for (Mute mute:Mute.getMutes()) {
-            if (mute.getReason()!=null)  configuration.set("mutes."+mute.getMemberId()+".reason", mute.getReason());
+            if (mute.getReason()!=null)  dataHandler.getConfiguration().set("mutes."+mute.getMemberId()+".reason", mute.getReason());
             if (mute.getMuteExpiration()!=null) {
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                configuration.set("mutes."+mute.getMemberId()+".expiresIn", dateFormat.format(mute.getMuteExpiration()));
+                dataHandler.getConfiguration().set("mutes."+mute.getMemberId()+".expiresIn", dateFormat.format(mute.getMuteExpiration()));
             }
         }
 
-        yamlConfiguration.save(configuration,dataResource.getFile());
+        dataHandler.getYamlConfiguration().save(dataHandler.getConfiguration(),dataHandler.getDataResource().getFile());
 
     }
 

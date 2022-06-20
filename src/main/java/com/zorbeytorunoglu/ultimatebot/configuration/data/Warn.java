@@ -1,9 +1,8 @@
-package com.zorbeytorunoglu.ultimatebot.configuration.datas;
+package com.zorbeytorunoglu.ultimatebot.configuration.data;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
 
 public class Warn {
 

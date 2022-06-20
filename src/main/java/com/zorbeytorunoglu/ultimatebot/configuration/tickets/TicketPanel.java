@@ -1,11 +1,9 @@
 package com.zorbeytorunoglu.ultimatebot.configuration.tickets;
 
-import com.zorbeytorunoglu.ultimatebot.configuration.Configuration;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class TicketPanel {

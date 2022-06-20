@@ -49,3 +49,7 @@ commands:
   ticketpanel:
     users: []
     roles: []
+  createticket:
+    users: []
+    roles:
+      - everyone

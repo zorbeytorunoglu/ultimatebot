@@ -170,5 +170,11 @@
   "ticketPanelUsageColor": "RED",
   "ticketPanelNotFound": "Ticket panel could not be found",
   "ticketPanelNotFoundTitle": "Are you sure it exists?! :skull:",
-  "ticketPanelNotFoundColor": "RED"
+  "ticketPanelNotFoundColor": "RED",
+  "maxTicketError": "You have reached maximum ticket count, which is __%max%__",
+  "maxTicketErrorTitle": "Aren't they enough already :alien:",
+  "maxTicketErrorColor": "RED",
+  "ticketCreated": "Your ticket is created dear %member%! Here it is: %ticket% :star:",
+  "ticketCreatedTitle": "Ticket Created :tada:",
+  "ticketCreatedColor": "RED"
 }

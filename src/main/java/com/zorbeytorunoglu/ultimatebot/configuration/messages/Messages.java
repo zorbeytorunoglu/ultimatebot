@@ -177,8 +177,38 @@ public class Messages {
     private String ticketPanelNotFound;
     private String ticketPanelNotFoundTitle;
     private String ticketPanelNotFoundColor;
+    private String maxTicketError;
+    private String maxTicketErrorTitle;
+    private String maxTicketErrorColor;
+    private String ticketCreated;
+    private String ticketCreatedTitle;
+    private String ticketCreatedColor;
 
     public Messages() {}
+
+    public String getTicketCreated() {
+        return ticketCreated;
+    }
+
+    public String getTicketCreatedTitle() {
+        return ticketCreatedTitle;
+    }
+
+    public String getTicketCreatedColor() {
+        return ticketCreatedColor;
+    }
+
+    public String getMaxTicketError() {
+        return maxTicketError;
+    }
+
+    public String getMaxTicketErrorTitle() {
+        return maxTicketErrorTitle;
+    }
+
+    public String getMaxTicketErrorColor() {
+        return maxTicketErrorColor;
+    }
 
     public String getTicketPanelNotFound() {
         return ticketPanelNotFound;

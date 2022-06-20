@@ -24,34 +24,23 @@
       label: Place an Order
       emoji: '<:shoppingcart:908044723539820554>'
       ticket:
-        category: '986452451353845820'
-        name-format: support-%user_name%
+        category: '988249076757856346'
+        name-format: support-%member%
+        member-permissions: MESSAGE_HISTORY,USE_APPLICATION_COMMANDS,VIEW_CHANNEL,MESSAGE_SEND,MESSAGE_ATTACH_FILES,MESSAGE_ADD_REACTION
         roles-to-be-added:
-          - Investor
+          Investor:
+            allow: 'MESSAGE_HISTORY,USE_APPLICATION_COMMANDS,VIEW_CHANNEL,MESSAGE_SEND,MESSAGE_ATTACH_FILES,MESSAGE_ADD_REACTION'
+            deny: none
+          Minecraft-Lover:
+            allow: 'MESSAGE_HISTORY,USE_APPLICATION_COMMANDS,VIEW_CHANNEL,MESSAGE_SEND,MESSAGE_ATTACH_FILES,MESSAGE_ADD_REACTION'
+            deny: none
         ping-roles:
           - Investor
+          - Minecraft-Lover
         start-embed:
           author: MCPL
           author-url: https://mc-marketi.com
           author-img-url: https://i.im.ge/2021/11/10/oYr9fz.png
           title: '**Order Ticket Created!** :star:'
-          description: Hello **<@%user_id%>**! Our <@&916372754662572133> team will be here to assist you for your order!
-          color: ORANGE
-    '2':
-      id: anan
-      label: Apply
-      emoji: '<:ip:924670131039264769>'
-      ticket:
-        category: '986452451353845820'
-        name-format: ip-%user_name%
-        roles-to-be-added:
-          - Investor
-        ping-roles:
-          - Investor
-        start-embed:
-          author: MCPL
-          author-url: https://mc-marketi.com
-          author-img-url: https://i.im.ge/2021/11/10/oYr9fz.png
-          title: '**Order Ticket Created!** :star:'
-          description: Hello **<@%user_id%>**! Our <@&916372754662572133> team will be here to assist you for your order!
+          description: Hello %member%! Our team will be here to assist you for your order!
           color: ORANGE

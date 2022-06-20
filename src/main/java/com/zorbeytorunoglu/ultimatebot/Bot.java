@@ -1,7 +1,7 @@
 package com.zorbeytorunoglu.ultimatebot;
 
 import com.zorbeytorunoglu.ultimatebot.configuration.commands.CommandsHandler;
-import com.zorbeytorunoglu.ultimatebot.configuration.datas.DataHandler;
+import com.zorbeytorunoglu.ultimatebot.configuration.data.DataHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.messages.MessageHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.settings.SettingsHandler;
 import com.zorbeytorunoglu.ultimatebot.configuration.tickets.TicketHandler;

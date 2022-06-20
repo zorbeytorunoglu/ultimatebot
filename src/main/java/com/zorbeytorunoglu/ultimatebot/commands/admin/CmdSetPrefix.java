@@ -27,6 +27,7 @@ public class CmdSetPrefix implements MCPLCommand {
             event.getTextChannel().sendMessageEmbeds(
                     BotUtils.getEmbed(messages.getNoPermissionTitle(),messages.getNoPermission(),messages.getNoPermissionColor())
             ).queue();
+            return;
         }
 
         if (args.length!=2) {

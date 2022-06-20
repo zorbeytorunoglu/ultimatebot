@@ -6,16 +6,12 @@ import com.zorbeytorunoglu.ultimatebot.configuration.Resource;
 import com.zorbeytorunoglu.ultimatebot.configuration.YamlConfiguration;
 import com.zorbeytorunoglu.ultimatebot.utils.BotUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Emoji;
-import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
-import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class TicketHandler {
 
@@ -34,7 +30,7 @@ public class TicketHandler {
 
         this.ticketPanels=new ArrayList<>();
 
-        loadPanels(configuration);
+        loadPanels(configuration, this.ticketPanels);
 
     }
 
@@ -50,7 +46,7 @@ public class TicketHandler {
         return configuration;
     }
 
-    private void loadPanels(Configuration configuration) {
+    private void loadPanels(Configuration configuration, List<TicketPanel> ticketPanels) {
         if (configuration.getKeys().isEmpty()) return;
         configuration.getKeys().forEach(panelId -> {
             TicketPanel ticketPanel=loadPanel(panelId,configuration);
@@ -132,19 +128,50 @@ public class TicketHandler {
             if (configuration.getString(panelId+".buttons."+s+".ticket.name-format")!="")
                 ticketButton.setTicketNameFormat(configuration.getString(panelId+".buttons."+s+".ticket.name-format"));
 
-            if (configuration.getDefault(panelId+".buttons."+s+".ticket.roles-to-be-added")!=null) {
-                List<String> roles=new ArrayList<>();
-                roles.addAll(configuration.getStringList(panelId+".buttons."+s+".ticket.roles-to-be-added"));
-                ticketButton.setTicketRolesToBeAdded(roles);
+
+            if (configuration.getSection(panelId+".buttons."+s+".ticket.roles-to-be-added")!=null) {
+
+                Collection<String> roleKeys=configuration.getSection(panelId+".buttons."+s+".ticket.roles-to-be-added").getKeys();
+
+                for (String s1:roleKeys) {
+                    String[] allowedPerms=configuration.getString(panelId+".buttons."+s+".ticket.roles-to-be-added."+s1+".allow")
+                            .split(",");
+                    String[] deniedPerms=configuration.getString(panelId+".buttons."+s+".ticket.roles-to-be-added."+s1+".allow")
+                            .split(",");
+                    Collection<Permission> allowedPermissions=new ArrayList<>();
+                    for (String allowedPerm : allowedPerms) {
+                        if (!allowedPerm.equals("none")) allowedPermissions.add(Permission.valueOf(allowedPerm));
+                    }
+                    Collection<Permission> deniedPermissions=new ArrayList<>();
+                    for (String deniedPerm : deniedPerms) {
+                        if (!deniedPerm.equals("none")) deniedPermissions.add(Permission.valueOf(deniedPerm));
+                    }
+
+                    HashMap<String,Collection<Permission>> allowedPermissionsHash=new HashMap<>();
+                    HashMap<String,Collection<Permission>> deniedPermissionsHash=new HashMap<>();
+
+                    allowedPermissionsHash.put(s1.replace("-", " "),allowedPermissions);
+                    deniedPermissionsHash.put(s1.replace("-", " "),deniedPermissions);
+
+                    ticketButton.setAllowedPermissions(allowedPermissionsHash);
+                    ticketButton.setDeniedPermissions(deniedPermissionsHash);
+
+                }
+
+                List<String> roleList=new ArrayList<>();
+                roleKeys.forEach(l -> roleList.add(l));
+                ticketButton.setTicketRolesToBeAdded(roleList);
+
             }
 
-            if (configuration.getDefault(panelId+".buttons."+s+".ticket.ping-roles")!=null) {
+            if (!configuration.getStringList(panelId+".buttons."+s+".ticket.ping-roles").isEmpty()) {
                 List<String> roles=new ArrayList<>();
-                roles.addAll(configuration.getStringList(panelId+".buttons."+s+".ticket.ping-roles"));
+                configuration.getStringList(panelId+".buttons."+s+".ticket.ping-roles").forEach(pingRole ->
+                        roles.add(pingRole.replace("-", " ")));
                 ticketButton.setTicketPingRoles(roles);
             }
 
-            if (configuration.getDefault(panelId+".buttons."+s+".ticket.start-embed")!=null) {
+            if (configuration.getSection(panelId+".buttons."+s+".ticket.start-embed")!=null) {
                 EmbedBuilder embedBuilder=new EmbedBuilder();
                 if (configuration.getString(panelId+".buttons."+s+".ticket.start-embed.author")!="")
                     embedBuilder.setAuthor(configuration.getString(panelId+".buttons."+s+".ticket.start-embed.author"));
@@ -161,12 +188,23 @@ public class TicketHandler {
                     embedBuilder.setTitle(configuration.getString(panelId+".buttons."+s+".ticket.start-embed.title"));
                 }
                 if (configuration.getString(panelId+".buttons."+s+".ticket.start-embed.description")!="") {
-                    embedBuilder.setDescription(configuration.getString(panelId+".buttons."+s+".ticket.start-embed.description"));
+                    ticketButton.setEmbedDescription(configuration.getString(panelId+".buttons."+s+".ticket.start-embed.description"));
                 }
                 if (configuration.getString(panelId+".buttons."+s+".ticket.start-embed.color")!="") {
                     embedBuilder.setColor(BotUtils.getColor(configuration.getString(panelId+".buttons."+s+".ticket.start-embed.color")));
                 }
-                ticketButton.setTicketEmbed(embedBuilder.build());
+                ticketButton.setEmbedBuilder(embedBuilder);
+            }
+
+            if (configuration.getString(panelId+".buttons."+s+".ticket.member-permissions")!="") {
+                String[] perms=configuration.getString(panelId+".buttons."+s+".ticket.member-permissions").split(",");
+                Collection<Permission> permissionCollection=new ArrayList<>();
+                for (String perm:perms) {
+                    permissionCollection.add(Permission.valueOf(Permission.class,perm));
+                }
+                ticketButton.setMemberPermissions(permissionCollection);
+            } else {
+                ticketButton.setMemberPermissions(Collections.EMPTY_LIST);
             }
 
             buttonList.add(ticketButton);

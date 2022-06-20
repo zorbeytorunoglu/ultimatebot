@@ -1,10 +1,10 @@
 package com.zorbeytorunoglu.ultimatebot.configuration.tickets;
 
-import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class TicketButton {
 
@@ -14,12 +14,32 @@ public class TicketButton {
     private String ticketCategoryId=null;
     private String ticketNameFormat=null;
     private List<String> ticketRolesToBeAdded=null;
+    private HashMap<String, Collection<Permission>> allowedPermissions;
+    private HashMap<String, Collection<Permission>> deniedPermissions;
     private List<String> ticketPingRoles=null;
-    private MessageEmbed ticketEmbed=null;
+    private EmbedBuilder embedBuilder=null;
+    private String embedDescription=null;
     private Button button=null;
+    private Collection<Permission> memberPermissions;
 
     public TicketButton(String id) {
         this.id=id;
+    }
+
+    public HashMap<String, Collection<Permission>> getAllowedPermissions() {
+        return allowedPermissions;
+    }
+
+    public HashMap<String, Collection<Permission>> getDeniedPermissions() {
+        return deniedPermissions;
+    }
+
+    public void setAllowedPermissions(HashMap<String, Collection<Permission>> allowedPermissions) {
+        this.allowedPermissions = allowedPermissions;
+    }
+
+    public void setDeniedPermissions(HashMap<String, Collection<Permission>> deniedPermissions) {
+        this.deniedPermissions = deniedPermissions;
     }
 
     public Button getButton() {
@@ -82,25 +102,28 @@ public class TicketButton {
         this.ticketPingRoles = ticketPingRoles;
     }
 
-    public MessageEmbed getTicketEmbed() {
-        return ticketEmbed;
+    public EmbedBuilder getEmbedBuilder() {
+        return embedBuilder;
     }
 
-    public void setTicketEmbed(MessageEmbed ticketEmbed) {
-        this.ticketEmbed = ticketEmbed;
+    public void setEmbedBuilder(EmbedBuilder embedBuilder) {
+        this.embedBuilder = embedBuilder;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TicketButton)) return false;
-        TicketButton that = (TicketButton) o;
-        return id.equals(that.id) && Objects.equals(label, that.label) && Objects.equals(emojiId, that.emojiId) && Objects.equals(ticketCategoryId, that.ticketCategoryId) && Objects.equals(ticketNameFormat, that.ticketNameFormat) && Objects.equals(ticketRolesToBeAdded, that.ticketRolesToBeAdded) && Objects.equals(ticketPingRoles, that.ticketPingRoles) && Objects.equals(ticketEmbed, that.ticketEmbed) && Objects.equals(button, that.button);
+    public String getEmbedDescription() {
+        return embedDescription;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, label, emojiId, ticketCategoryId, ticketNameFormat, ticketRolesToBeAdded, ticketPingRoles, ticketEmbed, button);
+    public void setEmbedDescription(String embedDescription) {
+        this.embedDescription = embedDescription;
+    }
+
+    public Collection<Permission> getMemberPermissions() {
+        return memberPermissions;
+    }
+
+    public void setMemberPermissions(Collection<Permission> memberPermissions) {
+        this.memberPermissions = memberPermissions;
     }
 
 }

@@ -65,13 +65,14 @@ public class PermissionHandler {
         return userPermissions.containsKey(command) && userPermissions.get(command).contains(user.getId());
     }
 
-    public boolean hasPermission(String command, Member member) {
-        if (hasPermission(command, member.getUser())) return true;
+    public boolean hasPermission(String permission, Member member) {
+        if (hasPermission(permission, member.getUser())) return true;
         if (member.isOwner()) return true;
-        if (rolePermissions.containsKey(command)) {
+        if (rolePermissions.containsKey(permission)) {
+            if (rolePermissions.get(permission).contains("everyone")) return true;
             if (!member.getRoles().isEmpty()) {
                 for (Role role:member.getRoles()) {
-                    if (rolePermissions.get(command).contains(role.getId())) return true;
+                    return hasPermission(permission,role);
                 }
                 return false;
             }
@@ -80,9 +81,8 @@ public class PermissionHandler {
     }
 
     public boolean hasPermission(String permission, Role role) {
-        if (rolePermissions.containsKey(permission)) {
-            return rolePermissions.get(permission).contains(role.getId());
-        }
+        if (rolePermissions.containsKey(permission)) return rolePermissions.get(permission).contains(role.getId()) ||
+                rolePermissions.get(permission).contains("everyone");
         return false;
     }
 

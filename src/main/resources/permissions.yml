@@ -53,3 +53,9 @@ commands:
     users: []
     roles:
       - everyone
+  add:
+    users: []
+    roles: []
+  remove:
+    users: []
+    roles: []

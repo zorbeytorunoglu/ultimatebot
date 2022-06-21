@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class TicketUtils {
 
@@ -116,6 +117,27 @@ public class TicketUtils {
             if (ticket.getOwner().equals(memberId)) count++;
         }
         return count;
+    }
+
+    public static boolean isTicket(TextChannel textChannel) {
+        if (Ticket.getTickets().isEmpty()) return false;
+        for (Ticket ticket:Ticket.getTickets()) {
+            if (ticket.getTextChannelId().equals(textChannel.getId())) return true;
+        }
+        return false;
+    }
+
+    public static Ticket getTicket(TextChannel textChannel) {
+        if (Ticket.getTickets().isEmpty()) return null;
+        for (Ticket ticket:Ticket.getTickets()) {
+            if (ticket.getTextChannelId().equals(textChannel.getId())) return ticket;
+        }
+        return null;
+    }
+
+    public static Collection<Ticket> getTickets(Member member) {
+        if (Ticket.getTickets().isEmpty()) return Collections.EMPTY_LIST;
+        return Ticket.getTickets().stream().filter( ticket -> ticket.getOwner().equals(member.getId())).collect(Collectors.toList());
     }
 
 }

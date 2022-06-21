@@ -14,3 +14,38 @@ warns:
   action: ban
 tickets:
   member-ticket-limit: 2
+  member-add-perms: MESSAGE_HISTORY,USE_APPLICATION_COMMANDS,VIEW_CHANNEL,MESSAGE_SEND,MESSAGE_ATTACH_FILES,MESSAGE_ADD_REACTION
+welcome:
+  enabled: true
+  channel: '916231158856044607'
+  embed:
+    title: '**Welcome to MCPL dear %member_name%!**'
+    author: MCPL
+    color: ORANGE
+    footer: MCPL Services
+    footer-img-url: https://i.im.ge/2021/11/10/oYrw9F.png
+    thumbnail-img-url: '%member_avatar_url%'
+    author-url: https://mc-marketi.com
+    author-img-url: https://i.im.ge/2021/11/10/oYr9fz.png
+    description: 'It is nice to see your here __%member_tag%__! You need to read our rules, we don''t have much, it will be quick:'
+    fields:
+      '1':
+        title: '**Respect**'
+        description: Just be nice towards others!
+        inline: true
+      '2':
+        title: '**Behave**'
+        description: Watch the language you use!
+        inline: true
+      '3':
+        title: '**Love**'
+        description: 'Love everything and anyone in here! :heart:'
+        inline: true
+      '4':
+        title: '**Nothing commercial**'
+        description: 'Please, no one is here to listen to you talking about some boring product :warning:'
+        inline: true
+      '5':
+        title: '**No ads**'
+        description: 'Do not be an evil person and don''t try to steal anyone! :zap:'
+        inline: true

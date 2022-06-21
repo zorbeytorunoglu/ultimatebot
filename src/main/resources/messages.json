@@ -176,5 +176,20 @@
   "maxTicketErrorColor": "RED",
   "ticketCreated": "Your ticket is created dear %member%! Here it is: %ticket% :star:",
   "ticketCreatedTitle": "Ticket Created :tada:",
-  "ticketCreatedColor": "RED"
+  "ticketCreatedColor": "RED",
+  "addUsage": "%command% <mention user/user id>",
+  "addUsageTitle": "That doesn't seem right :confused:",
+  "addUsageColor": "RED",
+  "notTicket": "This is not a ticket",
+  "notTicketTitle": "Wrong kind of channel :warning:",
+  "notTicketColor": "RED",
+  "memberAddedToTicket": "%member% is added to the ticket!",
+  "memberAddedToTicketTitle": "Did you see how fast I was :zap:",
+  "memberAddedToTicketColor": "RED",
+  "removeUsage": "%command% <mention member/member id>",
+  "removeUsageTitle": "This is not right :warning:",
+  "removeUsageColor": "RED",
+  "memberRemovedFromTicket": "%member% is removed from the ticket!",
+  "memberRemovedFromTicketTitle": "Was nice to have you! Bye! :womans_hat:",
+  "memberRemovedFromTicketColor": "RED"
 }

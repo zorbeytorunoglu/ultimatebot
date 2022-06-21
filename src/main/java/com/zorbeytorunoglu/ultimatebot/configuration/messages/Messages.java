@@ -183,8 +183,83 @@ public class Messages {
     private String ticketCreated;
     private String ticketCreatedTitle;
     private String ticketCreatedColor;
+    private String addUsage;
+    private String addUsageTitle;
+    private String addUsageColor;
+    private String notTicket;
+    private String notTicketTitle;
+    private String notTicketColor;
+    private String memberAddedToTicket;
+    private String memberAddedToTicketTitle;
+    private String memberAddedToTicketColor;
+    private String removeUsage;
+    private String removeUsageTitle;
+    private String removeUsageColor;
+    private String memberRemovedFromTicket;
+    private String memberRemovedFromTicketTitle;
+    private String memberRemovedFromTicketColor;
 
     public Messages() {}
+
+    public String getRemoveUsage() {
+        return removeUsage;
+    }
+
+    public String getRemoveUsageTitle() {
+        return removeUsageTitle;
+    }
+
+    public String getRemoveUsageColor() {
+        return removeUsageColor;
+    }
+
+    public String getMemberRemovedFromTicket() {
+        return memberRemovedFromTicket;
+    }
+
+    public String getMemberRemovedFromTicketTitle() {
+        return memberRemovedFromTicketTitle;
+    }
+
+    public String getMemberRemovedFromTicketColor() {
+        return memberRemovedFromTicketColor;
+    }
+
+    public String getMemberAddedToTicket() {
+        return memberAddedToTicket;
+    }
+
+    public String getMemberAddedToTicketTitle() {
+        return memberAddedToTicketTitle;
+    }
+
+    public String getMemberAddedToTicketColor() {
+        return memberAddedToTicketColor;
+    }
+
+    public String getNotTicket() {
+        return notTicket;
+    }
+
+    public String getNotTicketTitle() {
+        return notTicketTitle;
+    }
+
+    public String getNotTicketColor() {
+        return notTicketColor;
+    }
+
+    public String getAddUsage() {
+        return addUsage;
+    }
+
+    public String getAddUsageTitle() {
+        return addUsageTitle;
+    }
+
+    public String getAddUsageColor() {
+        return addUsageColor;
+    }
 
     public String getTicketCreated() {
         return ticketCreated;

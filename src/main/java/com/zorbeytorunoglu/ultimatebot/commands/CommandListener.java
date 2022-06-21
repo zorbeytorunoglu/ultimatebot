@@ -6,6 +6,8 @@ import com.zorbeytorunoglu.ultimatebot.commands.admin.CmdSetStatus;
 import com.zorbeytorunoglu.ultimatebot.commands.misc.CmdAnnounce;
 import com.zorbeytorunoglu.ultimatebot.commands.misc.CmdPing;
 import com.zorbeytorunoglu.ultimatebot.commands.moderation.*;
+import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdAdd;
+import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdRemove;
 import com.zorbeytorunoglu.ultimatebot.commands.ticket.CmdTicketPanel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -29,6 +31,8 @@ public class CommandListener extends ListenerAdapter {
     private final CmdSlowmode cmdSlowmode;
     private final CmdWarn cmdWarn;
     private final CmdTicketPanel cmdTicketPanel;
+    private final CmdAdd cmdAdd;
+    private final CmdRemove cmdRemove;
 
     public CommandListener(Bot bot, CmdSetStatus cmdSetStatus,
                            CmdSetPrefix cmdSetPrefix,
@@ -39,7 +43,8 @@ public class CommandListener extends ListenerAdapter {
                            CmdAnnounce cmdAnnounce, CmdMute cmdMute,
                            CmdUnmute cmdUnmute, CmdPurge cmdPurge,
                            CmdSlowmode cmdSlowmode, CmdWarn cmdWarn,
-                           CmdTicketPanel cmdTicketPanel) {
+                           CmdTicketPanel cmdTicketPanel, CmdAdd cmdAdd,
+                           CmdRemove cmdRemove) {
         this.bot=bot;
         this.cmdSetStatus=cmdSetStatus;
         this.cmdSetPrefix=cmdSetPrefix;
@@ -56,6 +61,8 @@ public class CommandListener extends ListenerAdapter {
         this.cmdSlowmode=cmdSlowmode;
         this.cmdWarn=cmdWarn;
         this.cmdTicketPanel=cmdTicketPanel;
+        this.cmdAdd=cmdAdd;
+        this.cmdRemove=cmdRemove;
     }
 
     @Override
@@ -123,6 +130,13 @@ public class CommandListener extends ListenerAdapter {
             cmdTicketPanel.execute(bot,event,args); return;
         }
 
-    }
+        if (args[0].equals(cmdAdd.getCommand())) {
+            cmdAdd.execute(bot,event,args); return;
+        }
 
+        if (args[0].equals(cmdRemove.getCommand())) {
+            cmdRemove.execute(bot,event,args); return;
+        }
+
+    }
 }

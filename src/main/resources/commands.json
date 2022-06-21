@@ -15,5 +15,7 @@
   "purge": "purge",
   "slowmode": "slowmode",
   "warn": "warn",
-  "ticketpanel": "ticketpanel"
+  "ticketpanel": "ticketpanel",
+  "add": "add",
+  "remove": "ananorosbu"
 }

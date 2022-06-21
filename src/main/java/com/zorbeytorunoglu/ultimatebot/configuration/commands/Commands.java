@@ -19,9 +19,13 @@ public class Commands {
     private String slowmode;
     private String warn;
     private String ticketpanel;
+    private String add;
+    private String remove;
 
     public Commands() {}
 
+    public String getAdd() { return add; }
+    public String getRemove() { return remove; }
     public String getTicketpanel() {
         return ticketpanel;
     }
